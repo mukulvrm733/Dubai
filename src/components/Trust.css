@@ -1,0 +1,75 @@
+.trust-header { text-align: center; margin-bottom: 56px; }
+
+.trust-bg-deco {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('/villa-exterior.webp') center/cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.trust-bg-deco::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(45,106,79,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
+}
+
+.trust-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
+}
+
+.trust-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 14px; padding: 36px 24px; text-align: center;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden; cursor: default;
+}
+.trust-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform 0.35s ease;
+}
+.trust-card:hover {
+  background: rgba(45,106,79,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,168,76,0.25);
+}
+.trust-card:hover::before { transform: scaleX(1); }
+
+.tc-icon-wrap {
+  position: relative; width: 70px; height: 70px;
+  margin: 0 auto 20px;
+}
+.tc-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; border-radius: 50%;
+  background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+  font-size: 2rem; position: relative; z-index: 1;
+  transition: transform 0.3s;
+}
+.trust-card:hover .tc-icon { transform: scale(1.12) translateY(-2px); }
+
+.tc-icon-ring {
+  position: absolute; inset: -5px; border-radius: 50%;
+  border: 1px dashed rgba(201,168,76,0.2);
+  transition: border-color 0.3s;
+}
+.trust-card:hover .tc-icon-ring {
+  border-color: rgba(201,168,76,0.4);
+  animation: spinSlow 6s linear infinite;
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+.trust-card .h3 { margin-bottom: 12px; }
+
+.tc-check {
+  font-size: 0.82rem; color: rgba(255,255,255,0.52); line-height: 1.55;
+  display: flex; align-items: flex-start; justify-content: center; gap: 6px;
+}
+.tc-tick { color: var(--g-soft); font-size: 0.75rem; flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 900px) { .trust-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .trust-grid { grid-template-columns: 1fr; } }

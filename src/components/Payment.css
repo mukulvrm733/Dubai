@@ -1,0 +1,97 @@
+/* Section background image */
+#payment {
+  position: relative; overflow: hidden;
+}
+#payment::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('/hero-bg.webp') center/cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.pay-header { text-align: center; margin-bottom: 60px; }
+
+.pay-flow {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 24px; position: relative; margin-bottom: 52px;
+}
+
+/* connector track */
+.pay-track {
+  position: absolute; top: 52px; left: calc(16.66% + 12px); right: calc(16.66% + 12px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dk), var(--gold), var(--gold-dk));
+  pointer-events: none; z-index: 0;
+}
+
+.pay-card {
+  position: relative; z-index: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 14px; padding: 40px 28px 36px; text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  overflow: hidden;
+}
+.pay-card::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.pay-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.3);
+}
+
+.pay-card.featured {
+  background: linear-gradient(155deg, #e8d08a 0%, #c9a84c 50%, #a0791e 100%);
+  border-color: transparent;
+  box-shadow: 0 16px 48px rgba(160,121,30,0.55), 0 8px 0 rgba(100,70,10,0.6);
+  transform: translateY(-4px) scale(1.02);
+}
+.pay-card.featured:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 28px 72px rgba(160,121,30,0.65), 0 8px 0 rgba(100,70,10,0.6);
+}
+
+/* Step number node */
+.pay-node {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(201,168,76,0.2); border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 800; color: var(--gold);
+  margin: 0 auto 20px;
+}
+.featured .pay-node { background: rgba(7,24,14,0.25); border-color: var(--g-dark); color: var(--g-dark); }
+
+.pay-pct {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem; font-weight: 800; color: var(--white); line-height: 1;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 20px rgba(255,255,255,0.1);
+}
+.featured .pay-pct { color: var(--g-dark); text-shadow: none; }
+
+.pay-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.2); color: var(--gold);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 10px;
+}
+.pay-badge-dark { background: rgba(7,24,14,0.3); color: var(--g-dark); }
+
+.pay-desc { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+.featured .pay-desc { color: rgba(7,24,14,0.65); }
+
+.pay-detail { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.6; }
+.featured .pay-detail { color: rgba(7,24,14,0.55); }
+
+.pay-cta { text-align: center; }
+
+@media (max-width: 768px) {
+  .pay-flow { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+  .pay-track { display: none; }
+  .pay-card.featured { transform: none; }
+  .pay-card.featured:hover { transform: translateY(-6px); }
+}

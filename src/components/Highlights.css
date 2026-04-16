@@ -1,0 +1,57 @@
+.hl-header { text-align: center; margin-bottom: 52px; }
+
+.hl-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(201,168,76,0.15); border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.18);
+  box-shadow: 0 0 80px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.05);
+}
+
+.hl-card {
+  background: rgba(7,24,14,0.9); padding: 44px 24px; text-align: center;
+  position: relative; overflow: hidden;
+  transition: background 0.3s, transform 0.3s;
+  cursor: default;
+}
+.hl-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0); transform-origin: center;
+  transition: transform 0.35s ease;
+}
+.hl-card:hover { background: rgba(20,50,30,0.95); }
+.hl-card:hover::before { transform: scaleX(1); }
+
+.hl-icon {
+  font-size: 2.2rem; margin-bottom: 16px;
+  filter: drop-shadow(0 0 8px rgba(201,168,76,0.4));
+  transition: transform 0.3s;
+}
+.hl-card:hover .hl-icon { transform: scale(1.15) translateY(-3px); }
+
+.hl-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.hl-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 800; color: var(--white);
+  line-height: 1.1; margin-bottom: 6px;
+}
+.hl-sub { font-size: 0.8rem; color: rgba(255,255,255,0.42); }
+
+.hl-line {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 0; height: 2px; background: var(--gold);
+  transition: width 0.35s ease;
+  border-radius: 1px;
+}
+.hl-card:hover .hl-line { width: 60%; }
+
+@media (max-width: 768px) {
+  .hl-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .hl-grid { grid-template-columns: 1fr; }
+}

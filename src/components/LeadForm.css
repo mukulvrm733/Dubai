@@ -1,0 +1,8 @@
+.lead-form { }
+
+.lf-header { margin-bottom: 22px; }
+.lf-sub {
+  font-size: 0.78rem; color: rgba(255,255,255,0.42);
+  margin-top: 5px; letter-spacing: 0.3px;
+}
+.req { color: var(--gold); margin-left: 2px; }
