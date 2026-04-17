@@ -72,7 +72,7 @@ const DashboardAnalyticsStrip = () => {
                 >
                   <card.icon size={24} color={card.color} />
                 </div>
-                <div className={`px-3 py-1 rounded-full text-sm font-medium ${card.change.startsWith('+') ? 'text-green-400 bg-green-400/10' : 'text-blue-400 bg-blue-400/10'}`}>
+                <div className={`px-3 py-1 rounded-full text-sm font-medium ${card.change.startsWith('+') ? 'text-[#406a30] bg-[#406a30]/10' : 'text-blue-400 bg-blue-400/10'}`}>
                   {card.change}
                 </div>
               </div>

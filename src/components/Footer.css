@@ -39,7 +39,7 @@
   transition: stroke 0.2s;
 }
 .fc-phone { background: rgba(45,106,79,0.15); border-color: rgba(45,106,79,0.25); }
-.fc-phone svg { stroke: #4de890; }
+.fc-phone svg { stroke: #406a30; }
 .fc-mail   { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.2); }
 .fc-mail svg { stroke: var(--gold); }
 .fc-loc    { background: rgba(255,100,80,0.1); border-color: rgba(255,100,80,0.2); }

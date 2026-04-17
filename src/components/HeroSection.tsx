@@ -75,7 +75,7 @@ const HeroSection = () => {
             <div className="h-12 border-b border-white/5 flex items-center px-4 gap-2 bg-white/[0.02]">
               <div className="w-3 h-3 rounded-full bg-red-500/80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="w-3 h-3 rounded-full bg-[#406a30]/80" />
             </div>
             {/* Mockup UI Body */}
             <div className="p-6 flex flex-col gap-4">
