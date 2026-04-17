@@ -138,9 +138,6 @@
   }
   .nav-mobile-logo-img {
     height: 30px; width: auto; object-fit: contain;
-    background: rgba(255,255,255,0.95);
-    border-radius: 6px;
-    padding: 4px 10px;
   }
   .nav-mobile-badge {
     font-size: 0.6rem; font-weight: 700; letter-spacing: 2px;
