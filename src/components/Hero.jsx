@@ -9,37 +9,34 @@ export default function Hero() {
       {/* layered background */}
       <div className="hero-bg" />
       <div className="hero-overlay" />
-      <div className="hero-particles">
-        {[...Array(12)].map((_,i) => <span key={i} className="particle" style={{ '--i': i }} />)}
-      </div>
 
       <div className="hero-inner">
         {/* LEFT */}
         <div className="hero-left">
-          <div className="hero-badge fade-up d1">
+          <div className="hero-badge">
             <span className="badge-dot" />
             <span>Now Launching — Greenz by Danube</span>
           </div>
 
-          <h1 className="h1 white fade-up d2">
+          <h1 className="h1 white">
             Fully Furnished<br />
             <span className="hero-accent">Townhouses &amp; Villas</span><br />
             in Dubai from{' '}
             <span className="price-tag">AED 3.5M</span>
           </h1>
 
-          <p className="hero-sub fade-up d3">
+          <p className="hero-sub">
             Premium 3–5 bedroom residences near Dubai Academic City with a flexible
             1% monthly payment plan — designed for families, built for the future.
           </p>
 
-          <div className="hero-tags fade-up d4">
+          <div className="hero-tags">
             {tags.map(t => (
               <span key={t} className="htag"><span className="check-icon">✓</span>{t}</span>
             ))}
           </div>
 
-          <div className="hero-btns fade-up d5">
+          <div className="hero-btns">
             <a href="#cta" className="btn btn-gold btn-lg">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
               Download Brochure
@@ -52,16 +49,11 @@ export default function Hero() {
         </div>
 
         {/* RIGHT — FORM */}
-        <div className="hero-form-wrap fade-up d3">
+        <div className="hero-form-wrap">
           <LeadForm title="Get Full Project Details" sub="Free consultation · No obligation" btnType="gold" />
         </div>
       </div>
 
-      {/* scroll hint */}
-      <div className="scroll-hint">
-        <span>Scroll to explore</span>
-        <div className="scroll-arrow" />
-      </div>
     </section>
   )
 }

@@ -39,13 +39,16 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <a href="#hero" className="nav-logo" onClick={close}>
           <img src="/Danube-Logo.webp" alt="Danube Properties" className="nav-logo-img" />
+          <span className="nav-logo-divider" />
+          <img src="/Greenz logo.png" alt="Greenz" className="nav-logo-img nav-logo-greenz" />
         </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li className="nav-mobile-header">
             <a href="#hero" className="nav-mobile-logo" onClick={close}>
               <img src="/Danube-Logo.webp" alt="Danube Properties" className="nav-mobile-logo-img" />
-              <span className="nav-mobile-badge">Greenz</span>
+              <span className="nav-logo-divider nav-logo-divider--mobile" />
+              <img src="/Greenz logo.png" alt="Greenz" className="nav-mobile-logo-img nav-mobile-logo-greenz" />
             </a>
             <button className="nav-close-btn" onClick={close} aria-label="Close menu">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>

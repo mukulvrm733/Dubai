@@ -37,9 +37,7 @@ export default function App() {
 
       {/* Floating WhatsApp */}
       <a href={WA_HREF} target="_blank" rel="noreferrer" className="float-wa" aria-label="Chat on WhatsApp">
-        <div className="wa-ring" />
-        <div className="wa-ring2" />
-        <WaIcon />
+<WaIcon />
       </a>
     </>
   )
