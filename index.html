@@ -40,10 +40,10 @@
     transition: background 0.38s ease, border-color 0.38s ease, box-shadow 0.38s ease, backdrop-filter 0.38s ease;
   }
   nav.nav-scrolled {
-    background: rgba(255,255,255,0.82);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.65);
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.10);
   }
   .nav-logo { display: flex; align-items: center; gap: 0; }
   .nav-logo img { height: 42px; object-fit: contain; }
@@ -98,7 +98,8 @@
     font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
     color: rgba(255,255,255,0.7);
   }
-  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: rgba(255,255,255,0.45); }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: linear-gradient(to right, transparent, #406a30); }
+  .hero-eyebrow::after  { content: ''; display: block; width: 40px; height: 1px; background: linear-gradient(to left,  transparent, #406a30); }
   .hero-title {
     font-family: var(--font-serif); font-size: clamp(34px, 4.2vw, 60px); font-weight: 600;
     line-height: 1.1; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em;
@@ -489,6 +490,11 @@
   }
   .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
   .footer-brand img { height: 38px; object-fit: contain; margin-bottom: 16px; filter: brightness(10); opacity: 0.88; }
+  .footer-logo { display: flex; align-items: center; gap: 0; margin-bottom: 18px; }
+  .footer-logo img { height: 38px; object-fit: contain; margin-bottom: 0; filter: none; opacity: 1; }
+  .footer-logo .iiv-emblem { height: 36px; }
+  .footer-logo .iiv-text { height: 24px; }
+  .footer-logo .nav-logo-divider { background: rgba(255,255,255,0.25); transition: none; }
   .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
   .footer-contact a, .footer-contact p {
     display: flex; align-items: flex-start; gap: 10px;
@@ -557,45 +563,14 @@
     .currency-bar span { padding: 4px 12px; }
   }
   /* ── SHOOTING STAR LINE ── */
- .ss-line::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(64,106,48,0.3) 20%,
-    #406a30 55%,
-    rgba(180,255,160,0.9) 75%,
-    transparent 100%
-  );
-}
+  .ss-line {
+    position: relative; width: 100%; height: 1px;
+    background: rgba(64,106,48,0.2); margin: 18px 0; overflow: hidden;
+  }
   .ss-line::after {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(64,106,48,0.3) 20%,
-    #406a30 55%,
-    rgba(180,255,160,0.9) 75%,
-    transparent 100%
-  );
-}
-  @keyframes shootingStar {
-    0%   { left: -220px; opacity: 0; }
-    8%   { opacity: 1; }
-    92%  { opacity: 1; }
-    100% { left: calc(100% + 220px); opacity: 0; }
+    content: ''; position: absolute; top: -1px; left: 25%;
+    width: 160px; height: 3px; border-radius: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(64,106,48,0.3) 20%, #406a30 55%, rgba(180,255,160,0.9) 75%, transparent 100%);
   }
 
   /* ── PHONE PICKER ── */
@@ -801,15 +776,7 @@
               <span class="phone-flag">🇦🇪</span>
               <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
             </div>
-            <span class="phone-prefix">+971</span>
-            <input 
-  type="tel" 
-  id="h-wa" 
-  class="phone-number-input" 
-  placeholder="Enter phone number"
-  oninput="handlePhoneInput(this, 'h-phone-wrap')"
-  required
->
+            <input type="tel" id="h-wa" class="phone-number-input" placeholder="+971 50 123 4567" inputmode="tel" required>
             <div class="country-dropdown">
               <div class="country-search-wrap">
                 <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'h-phone-wrap')" onclick="event.stopPropagation()">
@@ -1310,14 +1277,7 @@
                 <span class="phone-flag">🇦🇪</span>
                 <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
               </div>
-              <span class="phone-prefix">+971</span>
-              <input 
-  type="tel" 
-  class="phone-number-input" 
-  oninput="handlePhoneInput(this)"
-  placeholder="Enter phone number"
-  required
->
+              <input type="tel" id="cta-wa" class="phone-number-input" placeholder="+971 50 123 4567" inputmode="tel" required>
               <div class="country-dropdown">
                 <div class="country-search-wrap">
                   <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'cta-phone-wrap')" onclick="event.stopPropagation()">
@@ -1378,22 +1338,16 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-     <div class="footer-brand">
-
-  <div class="footer-logos">
-    <img src="img-1.webp" alt="Infinite Imperial Ventures" class="iiv-emblem">
-    <img src="img-2.webp" alt="Infinite Imperial Ventures" class="iiv-text">
-    
-    <div class="footer-logo-divider"></div>
-    
-    <img src="Greenz logo.png" alt="Greenz by Danube" class="greenz-logo">
-  </div>
-
-  <p>
-    Infinite Imperial Ventures Real Estate LLC — a Dubai-based real estate company helping clients invest in premium properties across the emirate.
-  </p>
-
-</div>
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="nav-logo-iiv">
+            <img src="img-1.webp" alt="Infinite Imperial Ventures" class="iiv-emblem">
+            <img src="img-2.webp" alt="Infinite Imperial Ventures" class="iiv-text">
+          </div>
+          <div class="nav-logo-divider footer-logo-divider"></div>
+          <img src="Greenz logo.png" alt="Greenz by Danube">
+        </div>
+        <p>Infinite Imperial Ventures Real Estate LLC — a Dubai-based real estate company helping clients invest in premium properties across the emirate.</p>
         <div class="footer-contact">
           <a href="tel:+97142947655">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1456,8 +1410,7 @@
             <span class="phone-flag">🇦🇪</span>
             <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
           </div>
-          <span class="phone-prefix">+971</span>
-          <input type="tel" id="p-wa" class="phone-number-input" placeholder="50 123 4567" required>
+          <input type="tel" id="p-wa" class="phone-number-input" placeholder="+971 50 123 4567" required>
           <div class="country-dropdown">
             <div class="country-search-wrap">
               <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'p-phone-wrap')" onclick="event.stopPropagation()">
@@ -1532,9 +1485,8 @@
   function submitForm(form, source) {
     const name = form.querySelector('input[type="text"]').value.trim();
     const wrap = document.getElementById('h-phone-wrap');
-    const code = wrap.getAttribute('data-code') || '';
     const num = document.getElementById('h-wa').value.trim();
-    const wa = code + num;
+    const wa = num.startsWith('+') ? num : ((wrap.getAttribute('data-code') || '+971') + num);
     const purpose = form.querySelector('select:nth-of-type(1)').value || 'Not specified';
     const budget = form.querySelector('select:nth-of-type(2)').value || 'Not specified';
     if (!name || !num) { alert('Please enter your name and WhatsApp number.'); return; }
@@ -1547,9 +1499,8 @@
   function submitLeadForm(form, source) {
     const name = document.getElementById('cta-name').value.trim();
     const wrap = document.getElementById('cta-phone-wrap');
-    const code = wrap.getAttribute('data-code') || '';
     const num = document.getElementById('cta-wa').value.trim();
-    const wa = code + num;
+    const wa = num.startsWith('+') ? num : ((wrap.getAttribute('data-code') || '+971') + num);
     const email = document.getElementById('cta-email').value.trim();
     const purpose = document.getElementById('cta-purpose').value || 'Not specified';
     const budget = document.getElementById('cta-budget').value || 'Not specified';
@@ -1567,7 +1518,7 @@
     var hero = document.getElementById('hero');
     function onScroll() {
       var heroBottom = hero.offsetTop + hero.offsetHeight;
-      if (window.scrollY + 68 >= heroBottom) {
+      if (window.scrollY >= heroBottom - window.innerHeight) {
         nav.classList.add('nav-scrolled');
       } else {
         nav.classList.remove('nav-scrolled');
@@ -1718,21 +1669,15 @@
     var items = [];
     for (var i = 0; i < COUNTRIES.length; i++) {
       var c = COUNTRIES[i];
-      if (!q || c.n.toLowerCase().indexOf(q) > -1 || c.c.replace('+','').indexOf(q) > -1) {
-        items.push(i); // store original index
-      }
+      if (!q || c.n.toLowerCase().indexOf(q) > -1 || c.c.replace('+','').indexOf(q) > -1) items.push(i);
     }
     list.innerHTML = items.map(function(idx) {
       var c = COUNTRIES[idx];
       var sel = c.c === current ? ' c-selected' : '';
-      return '<li class="' + sel + '" data-idx="' + idx + '">' +
-        '<span class="c-flag-cell">' + c.f + '</span>' +
-        '<span class="c-name-cell">' + c.n + '</span>' +
-        '<span class="c-code-cell">' + c.c + '</span></li>';
+      return '<li class="' + sel + '" data-idx="' + idx + '"><span class="c-flag-cell">' + c.f + '</span><span class="c-name-cell">' + c.n + '</span><span class="c-code-cell">' + c.c + '</span></li>';
     }).join('');
   }
 
-  // Delegated click on country lists — avoids inline onclick quoting bugs
   function attachCountryListeners(listId, wrapId) {
     document.getElementById(listId).addEventListener('click', function(e) {
       var li = e.target.closest('li[data-idx]');
@@ -1762,19 +1707,36 @@
     var wrap = document.getElementById(wrapId);
     wrap.setAttribute('data-code', code);
     wrap.querySelector('.phone-flag').textContent = flag;
-    wrap.querySelector('.phone-prefix').textContent = code;
     wrap.classList.remove('open');
     wrap.querySelector('.country-search').value = '';
     renderCountryList(wrapId, '');
-    wrap.querySelector('.phone-number-input').focus();
+    var input = wrap.querySelector('.phone-number-input');
+    input.value = code + ' ';
+    input.focus();
+    setTimeout(function() { input.setSelectionRange(input.value.length, input.value.length); }, 10);
   }
 
-  function filterCountries(input, wrapId) {
-    renderCountryList(wrapId, input.value);
-  }
+  function filterCountries(input, wrapId) { renderCountryList(wrapId, input.value); }
 
-  // Auto-detect country when user types a dial code in the number field
-  function autoDetectCountryFromInput(wrapId) {
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.phone-input-wrap.open').forEach(function(w) {
+      if (!w.contains(e.target)) {
+        w.classList.remove('open');
+        w.querySelector('.country-search').value = '';
+        renderCountryList(w.id, '');
+      }
+    });
+  });
+
+  renderCountryList('h-phone-wrap', '');
+  renderCountryList('cta-phone-wrap', '');
+  renderCountryList('p-phone-wrap', '');
+  attachCountryListeners('h-country-list', 'h-phone-wrap');
+  attachCountryListeners('cta-country-list', 'cta-phone-wrap');
+  attachCountryListeners('p-country-list', 'p-phone-wrap');
+
+  // Auto-detect country flag from typed number
+  function autoDetectCountry(wrapId) {
     var wrap = document.getElementById(wrapId);
     var input = wrap.querySelector('.phone-number-input');
     var val = input.value;
@@ -1789,23 +1751,8 @@
     if (bestMatch) {
       wrap.setAttribute('data-code', bestMatch.c);
       wrap.querySelector('.phone-flag').textContent = bestMatch.f;
-      wrap.querySelector('.phone-prefix').textContent = bestMatch.c;
-      // Strip the code from the input so it isn't doubled on submit
-      input.value = val.slice(bestLen).trimStart();
     }
   }
-
-  // Close picker when clicking outside
-  document.addEventListener('click', function(e) {
-    document.querySelectorAll('.phone-input-wrap.open').forEach(function(w) {
-      if (!w.contains(e.target)) {
-        w.classList.remove('open');
-        w.querySelector('.country-search').value = '';
-        renderCountryList(w.id, '');
-      }
-    });
-  });
-
 
   // ── LEAD POPUP ──
   function openLeadPopup(title) {
@@ -1823,74 +1770,36 @@
   function submitPopupForm(form) {
     var name = document.getElementById('p-name').value.trim();
     var wrap = document.getElementById('p-phone-wrap');
-    var code = wrap.getAttribute('data-code') || '';
     var num = document.getElementById('p-wa').value.trim();
-    var wa = code + num;
+    var wa = num.startsWith('+') ? num : ((wrap.getAttribute('data-code') || '+971') + num);
     var purpose = document.getElementById('p-purpose').value || 'Not specified';
     var budget = document.getElementById('p-budget').value || 'Not specified';
     var title = document.getElementById('popupTitle').textContent;
     if (!name || !num) { alert('Please enter your name and WhatsApp number.'); return; }
     var msg = encodeURIComponent(
-      'Hi, I'm interested in Greenz by Danube.\n\nRequest: ' + title + '\nName: ' + name + '\nWhatsApp: ' + wa + '\nPurpose: ' + purpose + '\nBudget: ' + budget + '\n\nPlease share full details.'
+      'Hi, I\u2019m interested in Greenz by Danube.\n\nRequest: ' + title + '\nName: ' + name + '\nWhatsApp: ' + wa + '\nPurpose: ' + purpose + '\nBudget: ' + budget + '\n\nPlease share full details.'
     );
     window.open('https://wa.me/97142947655?text=' + msg, '_blank');
     closeLeadPopup();
   }
 
-  // Init popup phone picker
-  renderCountryList('p-phone-wrap', '');
-  attachCountryListeners('p-country-list', 'p-phone-wrap');
-  document.getElementById('p-wa').addEventListener('input', function() { autoDetectCountryFromInput('p-phone-wrap'); });
-
-  // Init both pickers
-  renderCountryList('h-phone-wrap', '');
-  renderCountryList('cta-phone-wrap', '');
-  attachCountryListeners('h-country-list', 'h-phone-wrap');
-  attachCountryListeners('cta-country-list', 'cta-phone-wrap');
-
-  // Auto-detect country from typed dial code
-  document.getElementById('h-wa').addEventListener('input', function() { autoDetectCountryFromInput('h-phone-wrap'); });
-  document.getElementById('cta-wa').addEventListener('input', function() { autoDetectCountryFromInput('cta-phone-wrap'); });
+  // Allow + only at start, then digits/spaces/dashes; auto-detect country on input
+  var phoneWrapMap = {'h-wa':'h-phone-wrap','cta-wa':'cta-phone-wrap','p-wa':'p-phone-wrap'};
+  Object.keys(phoneWrapMap).forEach(function(id) {
+    var wrapId = phoneWrapMap[id];
+    document.getElementById(id).addEventListener('input', function() {
+      var val = this.value;
+      // Allow + only at position 0
+      var cleaned = val.replace(/[^+0-9\s\-]/g, '');
+      if (cleaned.indexOf('+') > 0) cleaned = cleaned.replace(/\+/g, '');
+      if (cleaned !== val) {
+        var pos = this.selectionStart;
+        this.value = cleaned;
+        this.setSelectionRange(Math.max(0, pos - 1), Math.max(0, pos - 1));
+      }
+      autoDetectCountry(wrapId);
+    });
+  });
 </script>
-<script>
-/* Ensure your country list exists (you already populate dropdown) */
-const COUNTRIES = [
-  { name: "India", code: "+91", flag: "🇮🇳" },
-  { name: "United Arab Emirates", code: "+971", flag: "🇦🇪" },
-  { name: "United States", code: "+1", flag: "🇺🇸" },
-  { name: "United Kingdom", code: "+44", flag: "🇬🇧" }
-];
-
-/* Sort longest code first (important) */
-COUNTRIES.sort((a, b) => b.code.length - a.code.length);
-
-function handlePhoneInput(input, wrapId) {
-  const wrap = document.getElementById(wrapId);
-  let value = input.value;
-
-  // Allow only + and digits
-  value = value.replace(/[^0-9+]/g, '');
-  input.value = value;
-
-  // Try matching country code
-  const match = COUNTRIES.find(c =>
-    value.startsWith(c.code) ||
-    value.startsWith(c.code.replace('+',''))
-  );
-
-  if (match) {
-    // Update flag + prefix
-    wrap.querySelector('.phone-flag').textContent = match.flag;
-    wrap.querySelector('.phone-prefix').textContent = match.code;
-    wrap.dataset.code = match.code;
-
-    // Remove country code from input
-    input.value = value
-      .replace(match.code, '')
-      .replace(match.code.replace('+',''), '');
-  }
-}
-</script>
-
 </body>
 </html>
