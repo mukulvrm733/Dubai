@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenz by Danube | Premium Townhouses & Villas in Dubai</title>
+<link rel="icon" href="img-1.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #406a30;
+    --green-light: #507d3c;
+    --green-pale: #f0f5ed;
+    --white: #ffffff;
+    --off-white: #fafaf8;
+    --border: #e0e8db;
+    --text-dark: #1c1c1c;
+    --text-mid: #4a4a4a;
+    --text-light: #7a7a7a;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); color: var(--text-dark); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+    box-shadow: none;
+    transition: background 0.38s ease, border-color 0.38s ease, box-shadow 0.38s ease, backdrop-filter 0.38s ease;
+  }
+  nav.nav-scrolled {
+    background: rgba(255,255,255,0.82);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0; }
+  .nav-logo img { height: 42px; object-fit: contain; }
+  .nav-logo-divider {
+    width: 1px; height: 36px; background: rgba(255,255,255,0.4);
+    margin: 0 20px; flex-shrink: 0;
+    transition: background 0.38s;
+  }
+  nav.nav-scrolled .nav-logo-divider { background: var(--border); }
+  .nav-logo-iiv { display: flex; align-items: center; gap: 8px; }
+  .nav-logo-iiv .iiv-emblem { height: 38px; object-fit: contain; }
+  .nav-logo-iiv .iiv-text { height: 26px; object-fit: contain; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.92); text-decoration: none; transition: color 0.2s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  }
+  nav.nav-scrolled .nav-links a { color: var(--text-mid); text-shadow: none; }
+  .nav-links a:hover { color: #ffffff; }
+  nav.nav-scrolled .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    display: inline-block; padding: 9px 24px;
+    background: #406a30; border: 1.5px solid #406a30; color: #ffffff;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.25s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--green-light); border-color: var(--green-light); }
+  .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+  .nav-mobile-toggle span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.9); margin: 5px 0; transition: background 0.38s; }
+  nav.nav-scrolled .nav-mobile-toggle span { background: var(--text-dark); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center;
+    background: url('villa-exterior.webp') center center / cover no-repeat;
+    padding-top: 68px;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.28) 100%);
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 48px;
+    display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center;
+  }
+  .hero-text { color: var(--white); }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: rgba(255,255,255,0.45); }
+  .hero-title {
+    font-family: var(--font-serif); font-size: clamp(34px, 4.2vw, 60px); font-weight: 600;
+    line-height: 1.1; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em;
+  }
+  .hero-price {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .hero-price .aed { font-size: 22px; font-weight: 600; color: var(--white); }
+  .hero-price .inr { font-size: 14px; color: rgba(255,255,255,0.65); }
+  .hero-scarcity {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(64,106,48,0.85); border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px; margin-bottom: 28px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white);
+  }
+  .pulse-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #fff;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.4; transform:scale(0.75); }
+  }
+  .hero-badges { display: flex; gap: 28px; flex-wrap: wrap; }
+  .hero-badge {
+    display: flex; flex-direction: column;
+    border-left: 2px solid rgba(255,255,255,0.35); padding-left: 14px;
+  }
+  .hero-badge strong { font-size: 17px; font-weight: 600; color: var(--white); }
+  .hero-badge span { font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; margin-top: 3px; text-transform: uppercase; }
+
+  /* HERO FORM */
+  .hero-form {
+    background: rgba(255,255,255,0.1); padding: 36px 32px; margin-top: 80px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .form-title {
+    font-family: var(--font-serif); font-size: 22px; font-weight: 600;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .form-sub { font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 22px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+  .form-group input,
+  .form-group select {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.12);
+    font-family: var(--font-sans); font-size: 14px; color: var(--white);
+    outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px;
+    background-color: rgba(255,255,255,0.12);
+  }
+  .form-group select option { background: #2a4a1e; color: var(--white); }
+  .form-group input:focus, .form-group select:focus { border-color: rgba(255,255,255,0.6); }
+  .form-group input::placeholder { color: rgba(255,255,255,0.38); }
+  .btn-primary {
+    width: 100%; padding: 14px;
+    background: var(--green); color: var(--white);
+    font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    border: none; cursor: pointer; margin-top: 6px; transition: background 0.25s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: var(--green-light); }
+  .form-note { font-size: 11px; color: rgba(255,255,255,0.5); text-align: center; margin-top: 10px; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 96px 0; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+  .section-title {
+    font-family: var(--font-serif); font-size: clamp(28px, 3vw, 42px); font-weight: 600;
+    color: var(--text-dark); line-height: 1.16; margin-bottom: 14px; letter-spacing: -0.01em;
+  }
+  .section-sub { font-size: 15px; color: var(--text-mid); line-height: 1.75; max-width: 640px; }
+  .divider { width: 48px; height: 2px; background: var(--green); margin: 18px 0; }
+  .divider.center { margin: 18px auto; }
+
+  /* ── HIGHLIGHTS ── */
+  #highlights { background: var(--green); padding: 0; }
+  .highlights-head {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); text-align: center; padding: 36px 0 0;
+  }
+  .highlights-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.15); margin-top: 28px;
+  }
+  .highlight-box {
+    padding: 36px 24px; border-right: 1px solid rgba(255,255,255,0.15); text-align: center;
+  }
+  .highlight-box:last-child { border-right: none; }
+  .highlight-box .val {
+    font-family: var(--font-serif); font-size: 34px; font-weight: 700; color: var(--white);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .highlight-box .lbl { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .highlight-box .desc { font-size: 13px; color: rgba(255,255,255,0.82); margin-top: 5px; font-weight: 500; }
+
+  /* CURRENCY BAR */
+  .currency-bar {
+    background: rgba(0,0,0,0.18); border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 14px 48px; display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap;
+  }
+  .currency-bar span {
+    font-size: 12px; color: rgba(255,255,255,0.65); padding: 0 24px;
+    border-right: 1px solid rgba(255,255,255,0.2); letter-spacing: 0.06em;
+  }
+  .currency-bar span:last-child { border-right: none; }
+  .currency-bar span strong { color: var(--white); font-weight: 600; }
+
+  /* ── OVERVIEW ── */
+  #overview { background: var(--off-white); }
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .overview-text .section-title { margin-bottom: 18px; }
+  .overview-text p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+  /* Overview Slider */
+  .overview-slider { position: relative; overflow: hidden; }
+  .overview-slider::before {
+    content: ''; position: absolute; top: -16px; left: -16px;
+    width: 55%; height: 55%; border: 2px solid var(--green); z-index: 0; pointer-events: none;
+  }
+  .slider-track {
+    display: flex; transition: transform 0.45s ease;
+  }
+  .slider-track img {
+    width: 100%; flex-shrink: 0; height: 580px; object-fit: cover; display: block;
+  }
+  .slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.92); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 2; transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+  }
+  .slider-btn:hover { background: var(--green); }
+  .slider-btn:hover svg { stroke: white; }
+  .slider-btn svg { stroke: var(--text-dark); stroke-width: 2; fill: none; transition: stroke 0.2s; }
+  .slider-btn.prev { left: 12px; }
+  .slider-btn.next { right: 12px; }
+  .slider-dots {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+  }
+  .slider-dots span {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s;
+  }
+  .slider-dots span.active { background: var(--white); }
+
+  /* GALLERY LIGHTBOX */
+  .gallery-strip {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 0; margin-top: 60px;
+  }
+  .gallery-item { position: relative; overflow: hidden; cursor: zoom-in; }
+  .gallery-item img {
+    width: 100%; height: 210px; object-fit: cover; display: block;
+    filter: grayscale(15%); transition: transform 0.4s, filter 0.3s;
+  }
+  .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+  .lightbox-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+  }
+  .lightbox-overlay:target { display: flex; }
+  .lightbox-overlay img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 28px;
+    color: white; font-size: 36px; text-decoration: none; line-height: 1;
+    opacity: 0.7; transition: opacity 0.2s;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  /* ── PAYMENT PLAN ── */
+  #payment { background: var(--white); }
+  .payment-intro { max-width: 560px; margin: 0 auto 56px; text-align: center; }
+  .payment-intro .section-sub { margin-top: 12px; }
+  .payment-blocks {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+  }
+  .payment-block {
+    padding: 48px 36px; border-right: 1px solid var(--border); text-align: center;
+    position: relative;
+  }
+  .payment-block:last-child { border-right: none; }
+  .payment-block .pct {
+    font-family: var(--font-serif); font-size: 64px; font-weight: 700;
+    color: var(--green); line-height: 1;
+  }
+  .payment-block .pct sup { font-size: 28px; vertical-align: super; }
+  .payment-block .phase {
+    background: var(--green); color: var(--white);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 8px 0; margin: 20px -36px 0;
+  }
+  .payment-block .detail { font-size: 13px; color: var(--text-mid); margin-top: 16px; line-height: 1.6; }
+  .payment-cta { text-align: center; margin-top: 48px; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 36px;
+    border: 1.5px solid var(--green); color: var(--green);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; background: transparent;
+    transition: all 0.25s; font-family: var(--font-sans);
+  }
+  .btn-outline:hover { background: var(--green); color: var(--white); }
+
+  /* ── LOCATION ── */
+  #location { background: var(--green-pale); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .location-map img { width: 100%; height: 600px; object-fit: cover; display: block; border: 1px solid var(--border); }
+  .location-points .section-title { margin-bottom: 8px; }
+  .location-points .section-sub { margin-bottom: 28px; }
+
+  /* Travel Times */
+  .travel-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border: 1px solid var(--border); margin-bottom: 36px; background: var(--white);
+  }
+  .travel-card {
+    padding: 18px 16px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .travel-card:nth-child(3n) { border-right: none; }
+  .travel-card:nth-child(n+4) { border-bottom: none; }
+  .travel-card .t-time { font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--green); }
+  .travel-card .t-place { font-size: 11px; color: var(--text-mid); margin-top: 3px; line-height: 1.4; }
+
+  .loc-block { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .loc-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .loc-block h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+  .loc-block ul { list-style: none; }
+  .loc-block ul li {
+    font-size: 13px; color: var(--text-mid); padding: 4px 0;
+    display: flex; align-items: flex-start; gap: 9px; line-height: 1.5;
+  }
+  .loc-block ul li::before { content: '✔'; color: var(--green); font-size: 11px; margin-top: 2px; flex-shrink: 0; }
+
+  /* ── AMENITIES ── */
+  #amenities { background: var(--white); }
+  .amenities-header { text-align: center; margin-bottom: 56px; }
+  .amenities-header .section-sub { margin: 12px auto 0; }
+
+  /* Zone Hubs */
+  .amenity-zones {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+    border: 1px solid var(--border); margin-bottom: 0;
+  }
+  .amenity-zone {
+    padding: 36px 20px; text-align: center;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .amenity-zone:last-child { border-right: none; }
+  .amenity-zone:hover { background: var(--green-pale); }
+  .zone-icon { width: 52px; height: 52px; margin: 0 auto 16px; }
+  .zone-icon svg { width: 100%; height: 100%; stroke: var(--green); stroke-width: 1.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .zone-name { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+  .zone-items { font-size: 11px; color: var(--text-light); line-height: 1.6; }
+
+  /* Secondary amenity icons */
+  .amenity-secondary {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border: 1px solid var(--border); border-top: none;
+  }
+  .amenity-item {
+    padding: 28px 20px; text-align: center;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    transition: background 0.2s;
+  }
+  .amenity-item:last-child { border-right: none; }
+  .amenity-item:hover { background: var(--green-pale); }
+  .amenity-icon { width: 36px; height: 36px; }
+  .amenity-icon svg { width: 100%; height: 100%; stroke: var(--green); stroke-width: 1.3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .amenity-name { font-size: 12px; font-weight: 600; color: var(--text-dark); }
+
+  /* ── FLOOR PLANS ── */
+  #floorplans { background: var(--off-white); }
+  .fp-header { text-align: center; margin-bottom: 48px; }
+  .fp-header .section-sub { margin: 12px auto 0; max-width: 580px; }
+  .fp-tabs-wrap { text-align: center; margin-bottom: 48px; }
+  .fp-tabs {
+    display: inline-flex; border: 1px solid var(--border);
+  }
+  .fp-tab {
+    padding: 12px 36px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; cursor: pointer; border: none; background: transparent;
+    color: var(--text-mid); font-family: var(--font-sans); border-right: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .fp-tab:last-child { border-right: none; }
+  .fp-tab.active { background: var(--green); color: var(--white); }
+  .fp-panel { display: none; }
+  .fp-panel.active { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: start; }
+  .fp-image img {
+    width: 100%; object-fit: contain; max-height: 720px;
+    background: var(--white); padding: 20px; border: 1px solid var(--border); display: block;
+  }
+  .fp-details h3 { font-family: var(--font-serif); font-size: 30px; font-weight: 600; color: var(--green); margin-bottom: 4px; }
+  .fp-sqft { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; margin-bottom: 16px; }
+  .fp-details p { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+  .fp-features { list-style: none; margin-bottom: 24px; }
+  .fp-features li {
+    display: flex; gap: 10px; font-size: 13px; color: var(--text-mid);
+    padding: 6px 0; border-bottom: 1px solid var(--border);
+  }
+  .fp-features li:last-child { border-bottom: none; }
+  .fp-features li span { color: var(--green); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+
+  /* ── TRUST ── */
+  #trust { background: var(--white); }
+  .trust-header { text-align: center; margin-bottom: 56px; }
+  .trust-header .section-sub { margin: 12px auto 0; }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--border);
+  }
+  .trust-card { padding: 40px 28px; border-right: 1px solid var(--border); }
+  .trust-card:last-child { border-right: none; }
+  .trust-card .tc-val {
+    font-family: var(--font-serif); font-size: 32px; font-weight: 700;
+    color: var(--green); margin-bottom: 4px; line-height: 1.1;
+  }
+  .trust-card .tc-sub { font-size: 11px; color: var(--text-light); margin-bottom: 12px; letter-spacing: 0.06em; }
+  .trust-card h4 { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+  .trust-card p { font-size: 12px; color: var(--text-mid); line-height: 1.6; display: flex; gap: 8px; }
+  .trust-card p::before { content: '✔'; color: var(--green); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── FAQ ── */
+  #faq { background: var(--green-pale); }
+  .faq-header { text-align: center; margin-bottom: 48px; }
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  details {
+    border-bottom: 1px solid var(--border); background: var(--white);
+    margin-bottom: 0;
+  }
+  details:first-of-type { border-top: 1px solid var(--border); }
+  summary {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 24px; cursor: pointer; list-style: none;
+    font-size: 14px; font-weight: 600; color: var(--text-dark);
+    transition: color 0.2s;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; font-size: 20px; color: var(--green); font-weight: 300;
+    flex-shrink: 0; margin-left: 16px; transition: transform 0.25s;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details[open] summary { color: var(--green); }
+  .faq-answer { padding: 0 24px 20px; font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+  /* ── CTA SECTION ── */
+  #cta { background: var(--white); border-top: 1px solid var(--border); }
+  .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .cta-text .section-title { color: var(--green); }
+  .cta-text .section-sub { margin-top: 14px; }
+  .cta-contact-list { margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
+  .cta-contact-item { display: flex; gap: 14px; align-items: flex-start; }
+  .cta-contact-item svg { flex-shrink: 0; margin-top: 1px; }
+  .cta-contact-item span { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .cta-form-wrap { background: var(--off-white); padding: 40px 36px; border: 1px solid var(--border); }
+  .cta-form-title { font-family: var(--font-serif); font-size: 22px; color: var(--green); margin-bottom: 4px; }
+  .cta-form-sub { font-size: 12px; color: var(--text-light); margin-bottom: 22px; }
+
+  /* Urgency */
+  .urgency {
+    text-align: center; margin-top: 14px;
+    font-size: 11px; font-weight: 700; color: var(--green);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark); color: rgba(255,255,255,0.7);
+    padding: 64px 0 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand img { height: 38px; object-fit: contain; margin-bottom: 16px; filter: brightness(10); opacity: 0.88; }
+  .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+  .footer-contact a, .footer-contact p {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 10px;
+    text-decoration: none; line-height: 1.5;
+  }
+  .footer-contact a:hover { color: var(--white); }
+  .footer-links h5 {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-bottom: 18px;
+  }
+  .footer-links a {
+    display: block; font-size: 13px; color: rgba(255,255,255,0.55);
+    text-decoration: none; margin-bottom: 10px; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: rgba(255,255,255,0.3);
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45); text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 26px; height: 26px; fill: white; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: block; }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 0 28px; }
+    .container { padding: 0 28px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 48px 28px; }
+    .hero-form { max-width: 480px; }
+    .highlights-grid, .trust-grid { grid-template-columns: repeat(2, 1fr); }
+    .highlight-box:nth-child(2) { border-right: none; }
+    .highlight-box:nth-child(3), .highlight-box:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.15); }
+    .trust-card:nth-child(2) { border-right: none; }
+    .trust-card:nth-child(3), .trust-card:nth-child(4) { border-top: 1px solid var(--border); }
+    .overview-grid, .location-grid, .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+    .amenity-zones { grid-template-columns: repeat(3, 1fr); }
+    .amenity-zone:nth-child(3) { border-right: none; }
+    .amenity-zone:nth-child(4) { border-top: 1px solid var(--border); }
+    .amenity-zone:nth-child(5) { border-top: 1px solid var(--border); border-right: none; }
+    .amenity-secondary { grid-template-columns: repeat(2, 1fr); }
+    .amenity-item:nth-child(2n) { border-right: none; }
+    .amenity-item:nth-child(3), .amenity-item:nth-child(4) { border-top: 1px solid var(--border); }
+    .payment-blocks { grid-template-columns: 1fr; }
+    .payment-block { border-right: none; border-bottom: 1px solid var(--border); }
+    .payment-block:last-child { border-bottom: none; }
+    .fp-panel.active { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+    .currency-bar { padding: 12px 16px; }
+    .currency-bar span { padding: 4px 12px; }
+  }
+  /* ── SHOOTING STAR LINE ── */
+ .ss-line::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(64,106,48,0.3) 20%,
+    #406a30 55%,
+    rgba(180,255,160,0.9) 75%,
+    transparent 100%
+  );
+}
+  .ss-line::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(64,106,48,0.3) 20%,
+    #406a30 55%,
+    rgba(180,255,160,0.9) 75%,
+    transparent 100%
+  );
+}
+  @keyframes shootingStar {
+    0%   { left: -220px; opacity: 0; }
+    8%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { left: calc(100% + 220px); opacity: 0; }
+  }
+
+  /* ── PHONE PICKER ── */
+  .phone-input-wrap {
+    position: relative; display: flex;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    width: 100%;
+  }
+  .phone-input-wrap.light {
+    border: 1px solid var(--border); background: var(--white);
+  }
+  .phone-country-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 0 10px; cursor: pointer; flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.25);
+    color: var(--white); font-size: 13px;
+    user-select: none; background: transparent;
+    transition: background 0.15s;
+  }
+  .phone-input-wrap.light .phone-country-btn {
+    border-right: 1px solid var(--border); color: var(--text-dark);
+  }
+  .phone-country-btn:hover { background: rgba(255,255,255,0.08); }
+  .phone-input-wrap.light .phone-country-btn:hover { background: var(--green-pale); }
+  .phone-flag { font-size: 18px; line-height: 1; }
+  .phone-chevron { flex-shrink: 0; transition: transform 0.2s; }
+  .phone-input-wrap.open .phone-chevron { transform: rotate(180deg); }
+  .phone-prefix {
+    display: flex; align-items: center;
+    padding: 0 6px 0 10px; font-size: 14px; font-weight: 600;
+    color: var(--white); white-space: nowrap; flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    margin-right: 2px;
+  }
+  .phone-input-wrap.light .phone-prefix { color: var(--text-dark); border-right-color: var(--border); }
+  .phone-number-input {
+    flex: 1; padding: 11px 14px;
+    border: none; background: transparent; width: 0;
+    font-family: var(--font-sans); font-size: 14px; color: var(--white);
+    outline: none;
+  }
+  .phone-input-wrap.light .phone-number-input { color: var(--text-dark); }
+  .phone-number-input::placeholder { color: rgba(255,255,255,0.38); }
+  .phone-input-wrap.light .phone-number-input::placeholder { color: #aaa; }
+  .country-dropdown {
+    position: absolute; top: calc(100% + 2px); left: 0; z-index: 300;
+    width: 290px; background: #1e3a16;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.45);
+    display: none; flex-direction: column; overflow: hidden;
+  }
+  .phone-input-wrap.light .country-dropdown {
+    background: #fff; border: 1px solid var(--border);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.14);
+  }
+  .phone-input-wrap.open .country-dropdown { display: flex; }
+  .country-search-wrap { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .phone-input-wrap.light .country-search-wrap { border-bottom: 1px solid var(--border); }
+  .country-search {
+    width: 100%; padding: 7px 10px;
+    border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08);
+    color: var(--white); font-size: 13px; font-family: var(--font-sans);
+    outline: none;
+  }
+  .phone-input-wrap.light .country-search {
+    border: 1px solid var(--border); background: var(--off-white); color: var(--text-dark);
+  }
+  .country-search::placeholder { color: rgba(255,255,255,0.45); }
+  .phone-input-wrap.light .country-search::placeholder { color: #aaa; }
+  .country-list { list-style: none; overflow-y: auto; max-height: 240px; }
+  .country-list li {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 14px; cursor: pointer; font-size: 13px;
+    color: rgba(255,255,255,0.85); transition: background 0.12s;
+  }
+  .phone-input-wrap.light .country-list li { color: var(--text-dark); }
+  .country-list li:hover { background: rgba(255,255,255,0.1); }
+  .phone-input-wrap.light .country-list li:hover { background: var(--green-pale); }
+  .country-list li.c-selected { background: rgba(255,255,255,0.14); }
+  .phone-input-wrap.light .country-list li.c-selected { background: #e8f0e4; }
+  .c-flag-cell { font-size: 19px; line-height: 1; flex-shrink: 0; }
+  .c-name-cell { flex: 1; font-size: 12px; }
+  .c-code-cell { font-size: 11px; opacity: 0.6; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    .amenity-zones { grid-template-columns: 1fr 1fr; }
+    .amenity-zone:nth-child(2n) { border-right: none; }
+    .amenity-zone { border-top: 1px solid var(--border); }
+    .amenity-zone:nth-child(1), .amenity-zone:nth-child(2) { border-top: none; }
+    .travel-grid { grid-template-columns: repeat(2, 1fr); }
+    .travel-card:nth-child(2n) { border-right: none; }
+    .travel-card:nth-child(n+5) { border-bottom: none; }
+    .travel-card:nth-child(5) { border-bottom: 1px solid var(--border); }
+    .fp-tab { padding: 10px 18px; font-size: 11px; }
+    section { padding: 64px 0; }
+  }
+
+  /* ── LEAD POPUP ── */
+  .popup-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .popup-overlay.active { display: flex; }
+  .popup-box {
+    background: var(--white); max-width: 460px; width: 100%;
+    padding: 40px 36px 32px; position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+    max-height: 90vh; overflow-y: auto;
+  }
+  .popup-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; font-size: 22px; cursor: pointer;
+    color: var(--text-light); line-height: 1; padding: 4px;
+  }
+  .popup-close:hover { color: var(--text-dark); }
+  .popup-title {
+    font-family: var(--font-serif); font-size: 22px; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 4px;
+  }
+  .popup-sub { font-size: 13px; color: var(--text-light); margin-bottom: 22px; }
+  .popup-box .form-group label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-mid); display: block; margin-bottom: 6px;
+  }
+  .popup-box .form-group input,
+  .popup-box .form-group select {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--border); background: var(--white);
+    font-family: var(--font-sans); font-size: 14px; color: var(--text-dark);
+    outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none;
+  }
+  .popup-box .form-group input:focus,
+  .popup-box .form-group select:focus { border-color: var(--green); }
+  .popup-box .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23406a30' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px;
+  }
+  .popup-note { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-iiv">
+      <img src="img-1.webp" alt="Infinite Imperial Ventures" class="iiv-emblem">
+      <img src="img-2.webp" alt="Infinite Imperial Ventures" class="iiv-text">
+    </div>
+    <div class="nav-logo-divider"></div>
+    <img src="Greenz logo.png" alt="Greenz by Danube">
+  </div>
+  <div class="nav-links">
+    <a href="#overview">About</a>
+    <a href="#payment">Payment Plan</a>
+    <a href="#location">Location</a>
+    <a href="#amenities">Amenities</a>
+    <a href="#floorplans">Floor Plans</a>
+  </div>
+  <button class="nav-cta" onclick="openLeadPopup('Get Details')">Get Details</button>
+  <button class="nav-mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.position='fixed';document.querySelector('.nav-links').style.top='68px';document.querySelector('.nav-links').style.left='0';document.querySelector('.nav-links').style.right='0';document.querySelector('.nav-links').style.background='white';document.querySelector('.nav-links').style.padding='20px 28px';document.querySelector('.nav-links').style.borderBottom='1px solid #e0e8db';document.querySelector('.nav-links').style.gap='20px';document.querySelector('.nav-links').style.zIndex='99';">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Danube Properties · Dubai</span>
+      <h1 class="hero-title">Fully Furnished Townhouses &amp; Villas in Dubai</h1>
+      <div class="hero-price">
+        <span class="aed">From AED 3.5 Million</span>
+        <span class="inr">(≈ ₹8.88 Crore)</span>
+      </div>
+      <div class="hero-scarcity">
+        <span class="pulse-dot"></span>
+        Phase 1 · 700 Units Only · Limited Availability
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><strong>3–5 BR</strong><span>Townhouses &amp; Villas</span></div>
+        <div class="hero-badge"><strong>1% / Mo</strong><span>Payment Plan</span></div>
+        <div class="hero-badge"><strong>Q4 2029</strong><span>Handover</span></div>
+        <div class="hero-badge"><strong>50+</strong><span>Amenities</span></div>
+      </div>
+    </div>
+
+    <div class="hero-form">
+      <p class="form-title">Request Full Details</p>
+      <p class="form-sub">Get pricing, floor plans &amp; unit availability</p>
+      <form id="hero-form" onsubmit="submitForm(this, 'hero');return false;">
+        <div class="form-group">
+          <label for="h-name">Full Name</label>
+          <input type="text" id="h-name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="h-wa">WhatsApp Number</label>
+          <div class="phone-input-wrap" id="h-phone-wrap" data-code="+971">
+            <div class="phone-country-btn" onclick="togglePhonePicker('h-phone-wrap')">
+              <span class="phone-flag">🇦🇪</span>
+              <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+            </div>
+            <span class="phone-prefix">+971</span>
+            <input 
+  type="tel" 
+  id="h-wa" 
+  class="phone-number-input" 
+  placeholder="Enter phone number"
+  oninput="handlePhoneInput(this, 'h-phone-wrap')"
+  required
+>
+            <div class="country-dropdown">
+              <div class="country-search-wrap">
+                <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'h-phone-wrap')" onclick="event.stopPropagation()">
+              </div>
+              <ul class="country-list" id="h-country-list"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h-purpose">Buying Purpose</label>
+          <select id="h-purpose">
+            <option value="" disabled selected>Select purpose</option>
+            <option>Investment</option>
+            <option>Self Use</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="h-budget">Budget Range</label>
+          <select id="h-budget">
+            <option value="" disabled selected>Select budget</option>
+            <option>₹3 Cr – ₹5 Cr</option>
+            <option>₹5 Cr – ₹8 Cr</option>
+            <option>₹8 Cr+</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Get Full Details on WhatsApp
+        </button>
+        <p class="form-note">Your information is secure &amp; confidential</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <p class="highlights-head">Greenz By Danube — At a Glance</p>
+    <div class="highlights-grid">
+      <div class="highlight-box">
+        <div class="val">AED 3.5M</div>
+        <div class="lbl">Starting Price</div>
+        <div class="desc">Fully furnished units</div>
+      </div>
+      <div class="highlight-box">
+        <div class="val">3–5 BR</div>
+        <div class="lbl">Unit Types</div>
+        <div class="desc">Townhouses &amp; Villas</div>
+      </div>
+      <div class="highlight-box">
+        <div class="val">1%</div>
+        <div class="lbl">Monthly Plan</div>
+        <div class="desc">70/30 payment split</div>
+      </div>
+      <div class="highlight-box">
+        <div class="val">Q4 2029</div>
+        <div class="lbl">Handover</div>
+        <div class="desc">Structured timeline</div>
+      </div>
+    </div>
+    <div class="currency-bar">
+      <span><strong>AED 3.5M</strong> Starting Price</span>
+      <span>≈ <strong>₹8.88 Cr</strong> INR</span>
+      <span>≈ <strong>USD 953K</strong></span>
+      <span>≈ <strong>EUR 830K</strong></span>
+      <span><strong>700 Units</strong> Phase 1 Only</span>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <h2 class="section-title">A Premium Community Designed for Modern Family Living</h2>
+        <div class="divider"></div>
+        <p>GreenZ by Danube introduces the developer's first townhouse &amp; villa community in Dubai, bringing fully furnished 3–5BR homes to the Academic City area of Dubailand. The project is planned as a residential neighborhood designed for family living, with approximately 700 homes in the first phase.</p>
+        <p>Its location places residents next to Dubai Silicon Oasis — a major technology district with more than 100,000 residents and entrepreneurs and over 40,000 companies — as well as close to Dubai International Academic City and several international schools. With direct access to Sheikh Mohammed Bin Zayed Road (E311) and Emirates Road (E611), the community combines suburban space with strong connectivity across Dubai.</p>
+        <p>Spacious layouts, contemporary design, and a community-focused environment make it ideal for both end-users and long-term investors seeking strong returns in one of Dubai's most promising corridors.</p>
+        <p>Over 50% of the community is dedicated to greenery, lagoons, and open spaces — making Greenz one of Dubai's most lifestyle-forward residential developments.</p>
+        <button class="btn-outline" style="margin-top:8px;" onclick="openLeadPopup('Download Brochure')">Download Brochure</button>
+      </div>
+      <div class="overview-slider" id="overviewSlider">
+        <div class="slider-track" id="sliderTrack">
+          <img src="villa-exterior.webp" alt="Greenz Exterior">
+          <img src="gall-1.webp" alt="Community View 1">
+          <img src="gall-2.webp" alt="Community View 2">
+          <img src="gall-3.webp" alt="Community View 3">
+          <img src="gall-4.webp" alt="Community View 4">
+          <img src="gall-5.webp" alt="Community View 5">
+          <img src="gall-6.webp" alt="Community View 6">
+        </div>
+        <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="slider-btn next" onclick="moveSlide(1)" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+
+    <!-- Gallery with Lightbox -->
+    <div class="gallery-strip" style="margin-top:60px;">
+      <div class="gallery-item"><a href="#lb1"><img src="gall-1.webp" alt="Community View 1"></a></div>
+      <div class="gallery-item"><a href="#lb2"><img src="gall-2.webp" alt="Community View 2"></a></div>
+      <div class="gallery-item"><a href="#lb3"><img src="gall-3.webp" alt="Community View 3"></a></div>
+      <div class="gallery-item"><a href="#lb5"><img src="gall-5.webp" alt="Community View 5"></a></div>
+      <div class="gallery-item"><a href="#lb4"><img src="gall-4.webp" alt="Community View 4"></a></div>
+      <div class="gallery-item"><a href="#lb6"><img src="gall-6.webp" alt="Community View 6"></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX OVERLAYS -->
+<div id="lb1" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-1.webp" alt=""></div>
+<div id="lb2" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-2.webp" alt=""></div>
+<div id="lb3" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-3.webp" alt=""></div>
+<div id="lb4" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-4.webp" alt=""></div>
+<div id="lb5" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-5.webp" alt=""></div>
+<div id="lb6" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="gall-6.webp" alt=""></div>
+
+<!-- PAYMENT PLAN -->
+<section id="payment">
+  <div class="container">
+    <div class="payment-intro">
+      <div class="ss-line" style="--ss-delay:0s"></div>
+      <h2 class="section-title">Flexible 1% Monthly Payment Plan</h2>
+      <p class="section-sub">Low upfront. Flexible monthly payments designed for accessible ownership across the globe.</p>
+      <div class="ss-line" style="--ss-delay:1.6s"></div>
+    </div>
+    <div class="payment-blocks">
+      <div class="payment-block">
+        <div class="pct">10<sup>%</sup></div>
+        <div class="phase">Booking Amount</div>
+        <p class="detail">On Reservation<br>Secure your unit with just 10%</p>
+      </div>
+      <div class="payment-block">
+        <div class="pct">60<sup>%</sup></div>
+        <div class="phase">During Construction</div>
+        <p class="detail">1% monthly installments<br>over 4 years of construction</p>
+      </div>
+      <div class="payment-block">
+        <div class="pct">30<sup>%</sup></div>
+        <div class="phase">On Handover</div>
+        <p class="detail">Upon completion<br>Q4 2029</p>
+      </div>
+    </div>
+    <div class="payment-cta">
+      <button class="btn-outline" onclick="openLeadPopup('Get Full Payment Plan')">Get Full Payment Plan</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <div class="location-grid">
+      <div class="location-map">
+        <img src="location-map.webp" alt="Location Map — Greenz by Danube, Dubai Academic City">
+      </div>
+      <div class="location-points">
+        <h2 class="section-title">Prime Location with Strong Future Growth</h2>
+        <p class="section-sub">Strategically located in Al Rowaiyah First, adjacent to Dubai Academic City with easy access to key areas.</p>
+
+        <!-- Travel Times Grid -->
+        <div class="travel-grid">
+          <div class="travel-card">
+            <div class="t-time">5 min</div>
+            <div class="t-place">Dubai Silicon Oasis</div>
+          </div>
+          <div class="travel-card">
+            <div class="t-time">Adj.</div>
+            <div class="t-place">Academic City</div>
+          </div>
+          <div class="travel-card">
+            <div class="t-time">18 min</div>
+            <div class="t-place">Downtown Dubai</div>
+          </div>
+          <div class="travel-card">
+            <div class="t-time">20 min</div>
+            <div class="t-place">DXB Airport</div>
+          </div>
+          <div class="travel-card">
+            <div class="t-time">18 min</div>
+            <div class="t-place">Burj Khalifa</div>
+          </div>
+          <div class="travel-card">
+            <div class="t-time">35 min</div>
+            <div class="t-place">Dubai Marina</div>
+          </div>
+        </div>
+
+        <div class="loc-block">
+          <h4>Connectivity &amp; Access</h4>
+          <ul>
+            <li>Easy access to E611 &amp; E66 highways</li>
+            <li>Well-connected road network</li>
+            <li>Upcoming metro connectivity</li>
+          </ul>
+        </div>
+        <div class="loc-block">
+          <h4>Lifestyle &amp; Education</h4>
+          <ul>
+            <li>35+ clinics &amp; major hospitals nearby</li>
+            <li>Next to Dubai Academic City</li>
+            <li>27 universities &amp; 15+ schools</li>
+          </ul>
+        </div>
+        <div class="loc-block">
+          <h4>Growth &amp; Investment Potential</h4>
+          <ul>
+            <li>Rapidly developing residential corridor</li>
+            <li>Increasing demand from families &amp; students</li>
+            <li>Strong long-term rental potential</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities">
+  <div class="container">
+    <div class="amenities-header">
+      <div class="ss-line" style="--ss-delay:0.4s"></div>
+      <h2 class="section-title">Designed for Comfortable Family Living</h2>
+      <p class="section-sub">A 400,000 sq. ft. lifestyle destination with 50+ amenities across five signature lifestyle hubs.</p>
+      <div class="ss-line" style="--ss-delay:2.0s"></div>
+    </div>
+
+    <!-- Zone Hubs -->
+    <div class="amenity-zones">
+      <!-- The Beach Hub -->
+      <div class="amenity-zone">
+        <div class="zone-icon">
+          <svg viewBox="0 0 52 52"><path d="M8 36 C14 28 22 32 26 28 C30 24 36 28 44 22"/><path d="M10 42 C16 34 22 38 26 34 C30 30 38 34 44 28"/><circle cx="26" cy="14" r="6"/><line x1="26" y1="20" x2="26" y2="28"/><path d="M18 24 L26 22 L34 24"/></svg>
+        </div>
+        <div class="zone-name">The Beach Hub</div>
+        <div class="zone-items">Dancing fountain · Lagoon pool · Water features</div>
+      </div>
+      <!-- The Family Hub -->
+      <div class="amenity-zone">
+        <div class="zone-icon">
+          <svg viewBox="0 0 52 52"><circle cx="20" cy="12" r="4"/><circle cx="32" cy="12" r="4"/><path d="M14 24 C14 18 38 18 38 24 L38 40 L14 40 Z"/><path d="M20 40 L20 30 L32 30 L32 40"/><path d="M10 44 L42 44"/></svg>
+        </div>
+        <div class="zone-name">The Family Hub</div>
+        <div class="zone-items">Kids play · Day care · Community masjid</div>
+      </div>
+      <!-- The Sports Hub -->
+      <div class="amenity-zone">
+        <div class="zone-icon">
+          <svg viewBox="0 0 52 52"><circle cx="16" cy="36" r="8"/><circle cx="36" cy="36" r="8"/><path d="M16 36 L22 18 L30 18 L36 36"/><path d="M22 18 L28 28 L36 36"/><circle cx="28" cy="14" r="4"/><line x1="28" y1="10" x2="28" y2="18"/></svg>
+        </div>
+        <div class="zone-name">The Sports Hub</div>
+        <div class="zone-items">Sports courts · 3.75km loop · Cycling tracks</div>
+      </div>
+      <!-- The Wellness Hub -->
+      <div class="amenity-zone">
+        <div class="zone-icon">
+          <svg viewBox="0 0 52 52"><path d="M10 24 L18 24 L20 16 L24 32 L28 20 L32 28 L34 24 L42 24"/><ellipse cx="26" cy="38" rx="10" ry="6"/><path d="M22 38 C22 34 30 34 30 38"/></svg>
+        </div>
+        <div class="zone-name">The Wellness Hub</div>
+        <div class="zone-items">Panoramic gym · Deep recovery · Spa &amp; sauna</div>
+      </div>
+      <!-- Shop Dine Connect -->
+      <div class="amenity-zone">
+        <div class="zone-icon">
+          <svg viewBox="0 0 52 52"><rect x="8" y="20" width="36" height="26" rx="2"/><path d="M8 20 L14 8 H38 L44 20"/><line x1="8" y1="20" x2="44" y2="20"/><rect x="20" y="30" width="12" height="16" rx="1"/><path d="M22 8 L22 20 M30 8 L30 20"/></svg>
+        </div>
+        <div class="zone-name">Shop · Dine · Connect</div>
+        <div class="zone-items">20,000 sq ft retail · Cafes · Restaurants</div>
+      </div>
+    </div>
+
+    <!-- Secondary Icons -->
+    <div class="amenity-secondary">
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6 C16 6 10 13 12 20 C8 20 4 24 6 28 H42 C44 24 40 20 36 20 C38 13 32 6 24 6Z"/><line x1="24" y1="28" x2="24" y2="42"/><line x1="18" y1="36" x2="30" y2="36"/></svg>
+        </div>
+        <p class="amenity-name">Landscaped Parks</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="20" rx="2"/><path d="M6 30 C10 26 14 34 18 30 C22 26 26 34 30 30 C34 26 38 34 42 30"/></svg>
+        </div>
+        <p class="amenity-name">Swimming Pool</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 4 L38 10 L38 24 C38 33 24 44 24 44 C24 44 10 33 10 24 L10 10 Z"/><circle cx="24" cy="22" r="5"/><line x1="24" y1="27" x2="24" y2="34"/></svg>
+        </div>
+        <p class="amenity-name">Gated Community</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">
+          <svg viewBox="0 0 48 48"><path d="M12 36 L12 18 M36 36 L36 18"/><path d="M8 18 L40 18"/><path d="M20 18 L20 10 L28 10 L28 18"/><path d="M12 26 L18 26 M30 26 L36 26"/><rect x="6" y="36" width="36" height="6" rx="1"/></svg>
+        </div>
+        <p class="amenity-name">EV Charging &amp; Parking</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section id="floorplans">
+  <div class="container">
+    <div class="fp-header">
+      <div class="ss-line" style="--ss-delay:0.8s"></div>
+      <h2 class="section-title">Spacious Layouts for Every Family</h2>
+      <p class="section-sub">Well-designed layouts built for comfortable family living, featuring private gardens, generous living areas, and premium Italian furnishings.</p>
+      <div class="ss-line" style="--ss-delay:2.4s"></div>
+    </div>
+
+    <div class="fp-tabs-wrap">
+      <div class="fp-tabs">
+        <button class="fp-tab active" onclick="showFP('br3', this)">3 Bedroom</button>
+        <button class="fp-tab" onclick="showFP('br4', this)">4 Bedroom</button>
+        <button class="fp-tab" onclick="showFP('br5', this)">5 Bedroom</button>
+      </div>
+    </div>
+
+    <div id="fp-br3" class="fp-panel active">
+      <div class="fp-image"><img src="fp-3br.webp" alt="3 Bedroom Townhouse Floor Plan"></div>
+      <div class="fp-details">
+        <h3>3 Bedroom Townhouse</h3>
+        <p class="fp-sqft">approx. 2,400 sq. ft.</p>
+        <p>Thoughtfully designed for young families — a generous townhouse with double-height living spaces, private sky garden, and fully furnished interiors with premium Italian Dolce Vita furniture.</p>
+        <ul class="fp-features">
+          <li><span>✔</span> Double-height ceiling living area</li>
+          <li><span>✔</span> Private sky garden &amp; terrace</li>
+          <li><span>✔</span> Fully furnished with premium Italian furniture</li>
+          <li><span>✔</span> Fitted &amp; equipped kitchen</li>
+          <li><span>✔</span> Maid's room with ensuite</li>
+          <li><span>✔</span> Covered parking for 2 cars</li>
+          <li><span>✔</span> Ensuite bedrooms with walk-in wardrobes</li>
+        </ul>
+        <button class="btn-outline" onclick="openLeadPopup('Download All Floor Plans')">Download All Floor Plans</button>
+      </div>
+    </div>
+
+    <div id="fp-br4" class="fp-panel">
+      <div class="fp-image"><img src="fp-4br.webp" alt="4 Bedroom Townhouse Floor Plan"></div>
+      <div class="fp-details">
+        <h3>4 Bedroom Townhouse</h3>
+        <p class="fp-sqft">2,750 – 3,100 sq. ft.</p>
+        <p>Ideal for growing families, the 4-bedroom layout provides expansive living and dining areas, a rooftop terrace, and fully furnished interiors — ready to move in from day one.</p>
+        <ul class="fp-features">
+          <li><span>✔</span> Double-height ceiling living area</li>
+          <li><span>✔</span> Private rooftop terrace</li>
+          <li><span>✔</span> Fully furnished with premium Italian furniture</li>
+          <li><span>✔</span> Private pool option</li>
+          <li><span>✔</span> Study room &amp; maid's room</li>
+          <li><span>✔</span> Covered parking for 2 cars</li>
+          <li><span>✔</span> Ensuite bedrooms with walk-in wardrobes</li>
+        </ul>
+        <button class="btn-outline" onclick="openLeadPopup('Download All Floor Plans')">Download All Floor Plans</button>
+      </div>
+    </div>
+
+    <div id="fp-br5" class="fp-panel">
+      <div class="fp-image"><img src="fp-5br.webp" alt="5 Bedroom Villa Floor Plan"></div>
+      <div class="fp-details">
+        <h3>5 Bedroom Villa</h3>
+        <p class="fp-sqft">3,700 – 3,950 sq. ft.</p>
+        <p>The pinnacle of luxury living within Greenz — an oversized plot villa designed for those who demand space, privacy, and premium craftsmanship across every detail.</p>
+        <ul class="fp-features">
+          <li><span>✔</span> Oversized private plot</li>
+          <li><span>✔</span> Panoramic double-height gym access</li>
+          <li><span>✔</span> Private pool &amp; landscaped garden</li>
+          <li><span>✔</span> Fully furnished with premium Italian furniture</li>
+          <li><span>✔</span> Driver's room &amp; maid's room</li>
+          <li><span>✔</span> Covered parking for 3 cars</li>
+          <li><span>✔</span> Sky lounge &amp; rooftop terrace</li>
+        </ul>
+        <button class="btn-outline" onclick="openLeadPopup('Download All Floor Plans')">Download All Floor Plans</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <div class="container">
+    <div class="trust-header">
+      <div class="ss-line" style="--ss-delay:1.2s"></div>
+      <h2 class="section-title">Why Danube Properties Stands Apart</h2>
+      <p class="section-sub">Founded by Rizwan Sajan, Danube Properties is a leading UAE developer known for its 1% monthly payment plan. With 35+ projects launched and nearly 20 delivered, it focuses on affordable luxury homes with strong rental yield potential.</p>
+      <div class="ss-line" style="--ss-delay:2.8s"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="tc-val">AED 32B+</div>
+        <div class="tc-sub">Portfolio Value</div>
+        <h4>Strong Market Presence</h4>
+        <p>39+ landmark projects across Dubai's most sought-after locations</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-val">18</div>
+        <div class="tc-sub">Projects Delivered</div>
+        <h4>Proven Delivery Track Record</h4>
+        <p>Multiple completed residential communities handed over successfully</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-val">25.5M+</div>
+        <div class="tc-sub">Sq. Ft. Built</div>
+        <h4>Large-Scale Construction Expertise</h4>
+        <p>Structured timelines and quality construction on every project</p>
+      </div>
+      <div class="trust-card">
+        <div class="tc-val">1% / Mo</div>
+        <div class="tc-sub">Monthly Installment</div>
+        <h4>Flexible Payment Plans</h4>
+        <p>Designed for accessible ownership for investors worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <div class="ss-line" style="--ss-delay:0.2s"></div>
+      <h2 class="section-title">Frequently Asked Questions (FAQs)</h2>
+      <div class="ss-line" style="--ss-delay:1.8s"></div>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Where is Greenz by Danube located?</summary>
+        <p class="faq-answer">Greenz by Danube is located in Al Rowaiyah First, adjacent to Dubai International Academic City. It offers quick access to Dubai Silicon Oasis (5 minutes), Downtown Dubai (18 minutes), and Dubai International Airport (20 minutes) via E611 and E66 highways.</p>
+      </details>
+      <details>
+        <summary>What unit types are available?</summary>
+        <p class="faq-answer">Greenz offers 3-bedroom townhouses (approx. 2,400 sqft), 4-bedroom townhouses (2,750–3,100 sqft), and 5-bedroom semi-detached villas and twin villas (3,700–3,950 sqft). All units are fully furnished with premium Italian Dolce Vita furniture.</p>
+      </details>
+      <details>
+        <summary>What is the payment plan structure?</summary>
+        <p class="faq-answer">The payment plan is 70/30: 10% on booking, 60% during construction (via 1% monthly installments over 4 years), and 30% on handover in Q4 2029. This is designed to make premium Dubai real estate accessible without heavy upfront capital.</p>
+      </details>
+      <details>
+        <summary>When is the handover date?</summary>
+        <p class="faq-answer">Greenz by Danube is scheduled for handover in Q4 2029. Danube Properties has a strong track record of structured delivery timelines across all 18 of its previously completed projects.</p>
+      </details>
+      <details>
+        <summary>Are the units fully furnished?</summary>
+        <p class="faq-answer">Yes. Every unit in Greenz comes fully furnished with premium Italian Dolce Vita furniture — including fitted kitchens, bedroom furniture, and living area furnishings. No additional investment in furniture is required upon handover.</p>
+      </details>
+      <details>
+        <summary>Why invest in Dubai Academic City?</summary>
+        <p class="faq-answer">Dubai Academic City is one of the fastest-growing residential corridors in Dubai, with demand driven by 27+ universities and 15+ schools nearby. The area benefits from a young, educated population creating consistent rental demand, and ongoing infrastructure investment projecting strong capital appreciation over the next 5–7 years.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2 class="section-title">Get Full Project Details</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Receive complete pricing, floor plans, and unit availability directly on WhatsApp — speak with a dedicated property consultant today.</p>
+        <div class="cta-contact-list">
+          <div class="cta-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#406a30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+971 42 94 7655</span>
+          </div>
+          <div class="cta-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#406a30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@iivre.com</span>
+          </div>
+          <div class="cta-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#406a30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Fifty One Tower – 603, 6th Floor<br>Business Bay, Dubai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-form-wrap">
+        <p class="cta-form-title">Get Full Project Details</p>
+        <p class="cta-form-sub">Pricing · Floor Plans · Unit Availability — We respond within minutes</p>
+        <form id="cta-form" onsubmit="submitLeadForm(this,'cta');return false;">
+          <div class="form-group">
+            <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">Full Name *</label>
+            <input type="text" id="cta-name" placeholder="Enter your full name" required style="width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:var(--font-sans);font-size:14px;color:var(--text-dark);outline:none;transition:border-color 0.2s;">
+          </div>
+          <div class="form-group">
+            <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">WhatsApp Number *</label>
+            <div class="phone-input-wrap light" id="cta-phone-wrap" data-code="+971">
+              <div class="phone-country-btn" onclick="togglePhonePicker('cta-phone-wrap')">
+                <span class="phone-flag">🇦🇪</span>
+                <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+              </div>
+              <span class="phone-prefix">+971</span>
+              <input 
+  type="tel" 
+  class="phone-number-input" 
+  oninput="handlePhoneInput(this)"
+  placeholder="Enter phone number"
+  required
+>
+              <div class="country-dropdown">
+                <div class="country-search-wrap">
+                  <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'cta-phone-wrap')" onclick="event.stopPropagation()">
+                </div>
+                <ul class="country-list" id="cta-country-list"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">Email Address</label>
+            <input type="email" id="cta-email" placeholder="your@email.com" style="width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:var(--font-sans);font-size:14px;color:var(--text-dark);outline:none;transition:border-color 0.2s;">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">Buying Purpose</label>
+              <select id="cta-purpose" style="width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:var(--font-sans);font-size:14px;color:var(--text-dark);outline:none;appearance:none;-webkit-appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23406a30' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;">
+                <option value="" disabled selected>Select</option>
+                <option>Investment</option>
+                <option>Self Use</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">Budget Range</label>
+              <select id="cta-budget" style="width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:var(--font-sans);font-size:14px;color:var(--text-dark);outline:none;appearance:none;-webkit-appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23406a30' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;">
+                <option value="" disabled selected>Select</option>
+                <option>₹3 Cr – ₹5 Cr</option>
+                <option>₹5 Cr – ₹8 Cr</option>
+                <option>₹8 Cr+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:14px;">
+            <label style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:6px;">Unit Preference</label>
+            <select id="cta-unit" style="width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--white);font-family:var(--font-sans);font-size:14px;color:var(--text-dark);outline:none;appearance:none;-webkit-appearance:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23406a30' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E&quot;);background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;">
+              <option value="" disabled selected>Select unit type</option>
+              <option>3 BR Townhouse</option>
+              <option>4 BR Townhouse</option>
+              <option>5 BR Villa</option>
+              <option>Open to all options</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="margin-top:20px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Send My Enquiry on WhatsApp
+          </button>
+          <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:10px;">Your information is secure &amp; confidential</p>
+          <div class="urgency" style="margin-top:10px;">
+            <span class="pulse-dot" style="background:var(--green);"></span>
+            Limited units · Phase 1 · Act before allocation closes
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+     <div class="footer-brand">
+
+  <div class="footer-logos">
+    <img src="img-1.webp" alt="Infinite Imperial Ventures" class="iiv-emblem">
+    <img src="img-2.webp" alt="Infinite Imperial Ventures" class="iiv-text">
+    
+    <div class="footer-logo-divider"></div>
+    
+    <img src="Greenz logo.png" alt="Greenz by Danube" class="greenz-logo">
+  </div>
+
+  <p>
+    Infinite Imperial Ventures Real Estate LLC — a Dubai-based real estate company helping clients invest in premium properties across the emirate.
+  </p>
+
+</div>
+        <div class="footer-contact">
+          <a href="tel:+97142947655">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +971 42 94 7655
+          </a>
+          <a href="mailto:info@iivre.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@iivre.com
+          </a>
+          <p>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Fifty One Tower – 603, 6th Floor, Business Bay, Dubai
+          </p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <a href="#overview">Project Overview</a>
+        <a href="#payment">Payment Plan</a>
+        <a href="#location">Location</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#floorplans">Floor Plans</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Contact Us</a>
+      </div>
+      <div class="footer-links">
+        <h5>Developer</h5>
+        <a href="#">About Danube Properties</a>
+        <a href="#">39+ Projects</a>
+        <a href="#">18 Delivered Communities</a>
+        <a href="#">News &amp; Updates</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Infinite Imperial Ventures Real Estate LLC. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- LEAD POPUP MODAL -->
+<div class="popup-overlay" id="leadPopup" onclick="if(event.target===this)closeLeadPopup()">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closeLeadPopup()" aria-label="Close">&times;</button>
+    <p class="popup-title" id="popupTitle">Request Details</p>
+    <p class="popup-sub">Share your details and we'll respond within minutes</p>
+    <form id="popup-form" onsubmit="submitPopupForm(this);return false;">
+      <div class="form-group" style="margin-bottom:14px;">
+        <label for="p-name">Full Name</label>
+        <input type="text" id="p-name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group" style="margin-bottom:14px;">
+        <label for="p-wa">WhatsApp Number</label>
+        <div class="phone-input-wrap light" id="p-phone-wrap" data-code="+971">
+          <div class="phone-country-btn" onclick="togglePhonePicker('p-phone-wrap')">
+            <span class="phone-flag">🇦🇪</span>
+            <svg class="phone-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+          </div>
+          <span class="phone-prefix">+971</span>
+          <input type="tel" id="p-wa" class="phone-number-input" placeholder="50 123 4567" required>
+          <div class="country-dropdown">
+            <div class="country-search-wrap">
+              <input type="text" class="country-search" placeholder="Search country or code…" oninput="filterCountries(this,'p-phone-wrap')" onclick="event.stopPropagation()">
+            </div>
+            <ul class="country-list" id="p-country-list"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:14px;">
+        <label for="p-purpose">Buying Purpose</label>
+        <select id="p-purpose">
+          <option value="" disabled selected>Select purpose</option>
+          <option>Investment</option>
+          <option>Self Use</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label for="p-budget">Budget Range</label>
+        <select id="p-budget">
+          <option value="" disabled selected>Select budget</option>
+          <option>₹3 Cr – ₹5 Cr</option>
+          <option>₹5 Cr – ₹8 Cr</option>
+          <option>₹8 Cr+</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Get Details on WhatsApp
+      </button>
+      <p class="popup-note">Your information is secure &amp; confidential</p>
+    </form>
+  </div>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/97142947655?text=Hi%2C%20I%27m%20interested%20in%20Greenz%20by%20Danube.%20Please%20share%20details." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Overview Slider
+  var sliderIndex = 0;
+  var sliderTotal = 7;
+  (function initSlider() {
+    var dots = document.getElementById('sliderDots');
+    for (var i = 0; i < sliderTotal; i++) {
+      var d = document.createElement('span');
+      if (i === 0) d.className = 'active';
+      d.setAttribute('data-i', i);
+      d.onclick = function() { goSlide(+this.getAttribute('data-i')); };
+      dots.appendChild(d);
+    }
+  })();
+  function goSlide(n) {
+    sliderIndex = (n + sliderTotal) % sliderTotal;
+    document.getElementById('sliderTrack').style.transform = 'translateX(-' + (sliderIndex * 100) + '%)';
+    document.querySelectorAll('#sliderDots span').forEach(function(d, i) {
+      d.className = i === sliderIndex ? 'active' : '';
+    });
+  }
+  function moveSlide(dir) { goSlide(sliderIndex + dir); }
+
+  function showFP(id, btn) {
+    document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.fp-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('fp-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function submitForm(form, source) {
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const wrap = document.getElementById('h-phone-wrap');
+    const code = wrap.getAttribute('data-code') || '';
+    const num = document.getElementById('h-wa').value.trim();
+    const wa = code + num;
+    const purpose = form.querySelector('select:nth-of-type(1)').value || 'Not specified';
+    const budget = form.querySelector('select:nth-of-type(2)').value || 'Not specified';
+    if (!name || !num) { alert('Please enter your name and WhatsApp number.'); return; }
+    const msg = encodeURIComponent(
+      `Hi, I'm interested in Greenz by Danube.\n\nName: ${name}\nWhatsApp: ${wa}\nPurpose: ${purpose}\nBudget: ${budget}\n\nPlease share full details.`
+    );
+    window.open(`https://wa.me/97142947655?text=${msg}`, '_blank');
+  }
+
+  function submitLeadForm(form, source) {
+    const name = document.getElementById('cta-name').value.trim();
+    const wrap = document.getElementById('cta-phone-wrap');
+    const code = wrap.getAttribute('data-code') || '';
+    const num = document.getElementById('cta-wa').value.trim();
+    const wa = code + num;
+    const email = document.getElementById('cta-email').value.trim();
+    const purpose = document.getElementById('cta-purpose').value || 'Not specified';
+    const budget = document.getElementById('cta-budget').value || 'Not specified';
+    const unit = document.getElementById('cta-unit').value || 'Not specified';
+    if (!name || !num) { alert('Please enter your name and WhatsApp number.'); return; }
+    const msg = encodeURIComponent(
+      `Hi, I'm interested in Greenz by Danube.\n\nName: ${name}\nWhatsApp: ${wa}${email ? '\nEmail: ' + email : ''}\nPurpose: ${purpose}\nBudget: ${budget}\nUnit Preference: ${unit}\n\nPlease share full details.`
+    );
+    window.open(`https://wa.me/97142947655?text=${msg}`, '_blank');
+  }
+
+  // ── NAV SCROLL BEHAVIOUR ──
+  (function() {
+    var nav = document.querySelector('nav');
+    var hero = document.getElementById('hero');
+    function onScroll() {
+      var heroBottom = hero.offsetTop + hero.offsetHeight;
+      if (window.scrollY + 68 >= heroBottom) {
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // ── PHONE PICKER ──
+  var COUNTRIES = [
+    {f:'🇦🇪',n:'United Arab Emirates',c:'+971'},
+    {f:'🇮🇳',n:'India',c:'+91'},
+    {f:'🇵🇰',n:'Pakistan',c:'+92'},
+    {f:'🇧🇩',n:'Bangladesh',c:'+880'},
+    {f:'🇸🇦',n:'Saudi Arabia',c:'+966'},
+    {f:'🇬🇧',n:'United Kingdom',c:'+44'},
+    {f:'🇺🇸',n:'United States',c:'+1'},
+    {f:'🇨🇦',n:'Canada',c:'+1'},
+    {f:'🇦🇺',n:'Australia',c:'+61'},
+    {f:'🇩🇪',n:'Germany',c:'+49'},
+    {f:'🇫🇷',n:'France',c:'+33'},
+    {f:'🇮🇹',n:'Italy',c:'+39'},
+    {f:'🇪🇸',n:'Spain',c:'+34'},
+    {f:'🇳🇱',n:'Netherlands',c:'+31'},
+    {f:'🇧🇪',n:'Belgium',c:'+32'},
+    {f:'🇨🇭',n:'Switzerland',c:'+41'},
+    {f:'🇦🇹',n:'Austria',c:'+43'},
+    {f:'🇸🇪',n:'Sweden',c:'+46'},
+    {f:'🇳🇴',n:'Norway',c:'+47'},
+    {f:'🇩🇰',n:'Denmark',c:'+45'},
+    {f:'🇫🇮',n:'Finland',c:'+358'},
+    {f:'🇵🇹',n:'Portugal',c:'+351'},
+    {f:'🇬🇷',n:'Greece',c:'+30'},
+    {f:'🇵🇱',n:'Poland',c:'+48'},
+    {f:'🇨🇿',n:'Czech Republic',c:'+420'},
+    {f:'🇭🇺',n:'Hungary',c:'+36'},
+    {f:'🇷🇴',n:'Romania',c:'+40'},
+    {f:'🇧🇬',n:'Bulgaria',c:'+359'},
+    {f:'🇷🇺',n:'Russia',c:'+7'},
+    {f:'🇺🇦',n:'Ukraine',c:'+380'},
+    {f:'🇹🇷',n:'Turkey',c:'+90'},
+    {f:'🇮🇱',n:'Israel',c:'+972'},
+    {f:'🇯🇴',n:'Jordan',c:'+962'},
+    {f:'🇰🇼',n:'Kuwait',c:'+965'},
+    {f:'🇶🇦',n:'Qatar',c:'+974'},
+    {f:'🇧🇭',n:'Bahrain',c:'+973'},
+    {f:'🇴🇲',n:'Oman',c:'+968'},
+    {f:'🇾🇪',n:'Yemen',c:'+967'},
+    {f:'🇮🇶',n:'Iraq',c:'+964'},
+    {f:'🇮🇷',n:'Iran',c:'+98'},
+    {f:'🇦🇫',n:'Afghanistan',c:'+93'},
+    {f:'🇱🇰',n:'Sri Lanka',c:'+94'},
+    {f:'🇳🇵',n:'Nepal',c:'+977'},
+    {f:'🇲🇻',n:'Maldives',c:'+960'},
+    {f:'🇲🇾',n:'Malaysia',c:'+60'},
+    {f:'🇸🇬',n:'Singapore',c:'+65'},
+    {f:'🇮🇩',n:'Indonesia',c:'+62'},
+    {f:'🇵🇭',n:'Philippines',c:'+63'},
+    {f:'🇹🇭',n:'Thailand',c:'+66'},
+    {f:'🇻🇳',n:'Vietnam',c:'+84'},
+    {f:'🇰🇷',n:'South Korea',c:'+82'},
+    {f:'🇯🇵',n:'Japan',c:'+81'},
+    {f:'🇨🇳',n:'China',c:'+86'},
+    {f:'🇭🇰',n:'Hong Kong',c:'+852'},
+    {f:'🇹🇼',n:'Taiwan',c:'+886'},
+    {f:'🇳🇿',n:'New Zealand',c:'+64'},
+    {f:'🇿🇦',n:'South Africa',c:'+27'},
+    {f:'🇰🇪',n:'Kenya',c:'+254'},
+    {f:'🇳🇬',n:'Nigeria',c:'+234'},
+    {f:'🇬🇭',n:'Ghana',c:'+233'},
+    {f:'🇪🇹',n:'Ethiopia',c:'+251'},
+    {f:'🇹🇿',n:'Tanzania',c:'+255'},
+    {f:'🇺🇬',n:'Uganda',c:'+256'},
+    {f:'🇷🇼',n:'Rwanda',c:'+250'},
+    {f:'🇿🇼',n:'Zimbabwe',c:'+263'},
+    {f:'🇿🇲',n:'Zambia',c:'+260'},
+    {f:'🇲🇦',n:'Morocco',c:'+212'},
+    {f:'🇹🇳',n:'Tunisia',c:'+216'},
+    {f:'🇩🇿',n:'Algeria',c:'+213'},
+    {f:'🇱🇾',n:'Libya',c:'+218'},
+    {f:'🇪🇬',n:'Egypt',c:'+20'},
+    {f:'🇸🇩',n:'Sudan',c:'+249'},
+    {f:'🇲🇽',n:'Mexico',c:'+52'},
+    {f:'🇧🇷',n:'Brazil',c:'+55'},
+    {f:'🇦🇷',n:'Argentina',c:'+54'},
+    {f:'🇨🇱',n:'Chile',c:'+56'},
+    {f:'🇨🇴',n:'Colombia',c:'+57'},
+    {f:'🇵🇪',n:'Peru',c:'+51'},
+    {f:'🇻🇪',n:'Venezuela',c:'+58'},
+    {f:'🇪🇨',n:'Ecuador',c:'+593'},
+    {f:'🇧🇴',n:'Bolivia',c:'+591'},
+    {f:'🇵🇾',n:'Paraguay',c:'+595'},
+    {f:'🇺🇾',n:'Uruguay',c:'+598'},
+    {f:'🇨🇷',n:'Costa Rica',c:'+506'},
+    {f:'🇵🇦',n:'Panama',c:'+507'},
+    {f:'🇯🇲',n:'Jamaica',c:'+1876'},
+    {f:'🇹🇹',n:'Trinidad & Tobago',c:'+1868'},
+    {f:'🇱🇧',n:'Lebanon',c:'+961'},
+    {f:'🇸🇾',n:'Syria',c:'+963'},
+    {f:'🇦🇿',n:'Azerbaijan',c:'+994'},
+    {f:'🇬🇪',n:'Georgia',c:'+995'},
+    {f:'🇦🇲',n:'Armenia',c:'+374'},
+    {f:'🇰🇿',n:'Kazakhstan',c:'+7'},
+    {f:'🇺🇿',n:'Uzbekistan',c:'+998'},
+    {f:'🇹🇲',n:'Turkmenistan',c:'+993'},
+    {f:'🇰🇬',n:'Kyrgyzstan',c:'+996'},
+    {f:'🇹🇯',n:'Tajikistan',c:'+992'},
+    {f:'🇲🇳',n:'Mongolia',c:'+976'},
+    {f:'🇲🇲',n:'Myanmar',c:'+95'},
+    {f:'🇰🇭',n:'Cambodia',c:'+855'},
+    {f:'🇱🇦',n:'Laos',c:'+856'},
+    {f:'🇧🇳',n:'Brunei',c:'+673'},
+    {f:'🇫🇯',n:'Fiji',c:'+679'},
+    {f:'🇮🇪',n:'Ireland',c:'+353'},
+    {f:'🇮🇸',n:'Iceland',c:'+354'},
+    {f:'🇱🇺',n:'Luxembourg',c:'+352'},
+    {f:'🇲🇹',n:'Malta',c:'+356'},
+    {f:'🇨🇾',n:'Cyprus',c:'+357'},
+    {f:'🇸🇰',n:'Slovakia',c:'+421'},
+    {f:'🇸🇮',n:'Slovenia',c:'+386'},
+    {f:'🇭🇷',n:'Croatia',c:'+385'},
+    {f:'🇷🇸',n:'Serbia',c:'+381'},
+    {f:'🇧🇦',n:'Bosnia & Herzegovina',c:'+387'},
+    {f:'🇲🇪',n:'Montenegro',c:'+382'},
+    {f:'🇲🇰',n:'North Macedonia',c:'+389'},
+    {f:'🇦🇱',n:'Albania',c:'+355'},
+    {f:'🇱🇻',n:'Latvia',c:'+371'},
+    {f:'🇱🇹',n:'Lithuania',c:'+370'},
+    {f:'🇪🇪',n:'Estonia',c:'+372'},
+    {f:'🇧🇾',n:'Belarus',c:'+375'},
+    {f:'🇲🇩',n:'Moldova',c:'+373'},
+    {f:'🇨🇲',n:'Cameroon',c:'+237'},
+    {f:'🇨🇮',n:'Côte d\'Ivoire',c:'+225'},
+    {f:'🇸🇳',n:'Senegal',c:'+221'},
+    {f:'🇵🇬',n:'Papua New Guinea',c:'+675'},
+    {f:'🇲🇿',n:'Mozambique',c:'+258'},
+    {f:'🇲🇬',n:'Madagascar',c:'+261'},
+    {f:'🇺🇿',n:'Uzbekistan',c:'+998'},
+  ];
+
+  function renderCountryList(wrapId, filter) {
+    var listId = wrapId === 'h-phone-wrap' ? 'h-country-list' : (wrapId === 'p-phone-wrap' ? 'p-country-list' : 'cta-country-list');
+    var wrap = document.getElementById(wrapId);
+    var list = document.getElementById(listId);
+    var current = wrap.getAttribute('data-code');
+    var q = (filter || '').toLowerCase().replace(/^\+/, '');
+    var items = [];
+    for (var i = 0; i < COUNTRIES.length; i++) {
+      var c = COUNTRIES[i];
+      if (!q || c.n.toLowerCase().indexOf(q) > -1 || c.c.replace('+','').indexOf(q) > -1) {
+        items.push(i); // store original index
+      }
+    }
+    list.innerHTML = items.map(function(idx) {
+      var c = COUNTRIES[idx];
+      var sel = c.c === current ? ' c-selected' : '';
+      return '<li class="' + sel + '" data-idx="' + idx + '">' +
+        '<span class="c-flag-cell">' + c.f + '</span>' +
+        '<span class="c-name-cell">' + c.n + '</span>' +
+        '<span class="c-code-cell">' + c.c + '</span></li>';
+    }).join('');
+  }
+
+  // Delegated click on country lists — avoids inline onclick quoting bugs
+  function attachCountryListeners(listId, wrapId) {
+    document.getElementById(listId).addEventListener('click', function(e) {
+      var li = e.target.closest('li[data-idx]');
+      if (!li) return;
+      var idx = parseInt(li.getAttribute('data-idx'), 10);
+      var c = COUNTRIES[idx];
+      if (c) selectCountry(wrapId, c.f, c.c);
+    });
+  }
+
+  function togglePhonePicker(wrapId) {
+    var wrap = document.getElementById(wrapId);
+    var isOpen = wrap.classList.contains('open');
+    document.querySelectorAll('.phone-input-wrap.open').forEach(function(w) {
+      w.classList.remove('open');
+      w.querySelector('.country-search').value = '';
+      renderCountryList(w.id, '');
+    });
+    if (!isOpen) {
+      wrap.classList.add('open');
+      renderCountryList(wrapId, '');
+      setTimeout(function() { wrap.querySelector('.country-search').focus(); }, 50);
+    }
+  }
+
+  function selectCountry(wrapId, flag, code) {
+    var wrap = document.getElementById(wrapId);
+    wrap.setAttribute('data-code', code);
+    wrap.querySelector('.phone-flag').textContent = flag;
+    wrap.querySelector('.phone-prefix').textContent = code;
+    wrap.classList.remove('open');
+    wrap.querySelector('.country-search').value = '';
+    renderCountryList(wrapId, '');
+    wrap.querySelector('.phone-number-input').focus();
+  }
+
+  function filterCountries(input, wrapId) {
+    renderCountryList(wrapId, input.value);
+  }
+
+  // Auto-detect country when user types a dial code in the number field
+  function autoDetectCountryFromInput(wrapId) {
+    var wrap = document.getElementById(wrapId);
+    var input = wrap.querySelector('.phone-number-input');
+    var val = input.value;
+    if (!val.startsWith('+')) return;
+    var bestMatch = null, bestLen = 0;
+    for (var i = 0; i < COUNTRIES.length; i++) {
+      var code = COUNTRIES[i].c;
+      if (val.startsWith(code) && code.length > bestLen) {
+        bestMatch = COUNTRIES[i]; bestLen = code.length;
+      }
+    }
+    if (bestMatch) {
+      wrap.setAttribute('data-code', bestMatch.c);
+      wrap.querySelector('.phone-flag').textContent = bestMatch.f;
+      wrap.querySelector('.phone-prefix').textContent = bestMatch.c;
+      // Strip the code from the input so it isn't doubled on submit
+      input.value = val.slice(bestLen).trimStart();
+    }
+  }
+
+  // Close picker when clicking outside
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.phone-input-wrap.open').forEach(function(w) {
+      if (!w.contains(e.target)) {
+        w.classList.remove('open');
+        w.querySelector('.country-search').value = '';
+        renderCountryList(w.id, '');
+      }
+    });
+  });
+
+
+  // ── LEAD POPUP ──
+  function openLeadPopup(title) {
+    document.getElementById('popupTitle').textContent = title || 'Request Details';
+    document.getElementById('leadPopup').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLeadPopup() {
+    document.getElementById('leadPopup').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLeadPopup();
+  });
+  function submitPopupForm(form) {
+    var name = document.getElementById('p-name').value.trim();
+    var wrap = document.getElementById('p-phone-wrap');
+    var code = wrap.getAttribute('data-code') || '';
+    var num = document.getElementById('p-wa').value.trim();
+    var wa = code + num;
+    var purpose = document.getElementById('p-purpose').value || 'Not specified';
+    var budget = document.getElementById('p-budget').value || 'Not specified';
+    var title = document.getElementById('popupTitle').textContent;
+    if (!name || !num) { alert('Please enter your name and WhatsApp number.'); return; }
+    var msg = encodeURIComponent(
+      'Hi, I'm interested in Greenz by Danube.\n\nRequest: ' + title + '\nName: ' + name + '\nWhatsApp: ' + wa + '\nPurpose: ' + purpose + '\nBudget: ' + budget + '\n\nPlease share full details.'
+    );
+    window.open('https://wa.me/97142947655?text=' + msg, '_blank');
+    closeLeadPopup();
+  }
+
+  // Init popup phone picker
+  renderCountryList('p-phone-wrap', '');
+  attachCountryListeners('p-country-list', 'p-phone-wrap');
+  document.getElementById('p-wa').addEventListener('input', function() { autoDetectCountryFromInput('p-phone-wrap'); });
+
+  // Init both pickers
+  renderCountryList('h-phone-wrap', '');
+  renderCountryList('cta-phone-wrap', '');
+  attachCountryListeners('h-country-list', 'h-phone-wrap');
+  attachCountryListeners('cta-country-list', 'cta-phone-wrap');
+
+  // Auto-detect country from typed dial code
+  document.getElementById('h-wa').addEventListener('input', function() { autoDetectCountryFromInput('h-phone-wrap'); });
+  document.getElementById('cta-wa').addEventListener('input', function() { autoDetectCountryFromInput('cta-phone-wrap'); });
+</script>
+<script>
+/* Ensure your country list exists (you already populate dropdown) */
+const COUNTRIES = [
+  { name: "India", code: "+91", flag: "🇮🇳" },
+  { name: "United Arab Emirates", code: "+971", flag: "🇦🇪" },
+  { name: "United States", code: "+1", flag: "🇺🇸" },
+  { name: "United Kingdom", code: "+44", flag: "🇬🇧" }
+];
+
+/* Sort longest code first (important) */
+COUNTRIES.sort((a, b) => b.code.length - a.code.length);
+
+function handlePhoneInput(input, wrapId) {
+  const wrap = document.getElementById(wrapId);
+  let value = input.value;
+
+  // Allow only + and digits
+  value = value.replace(/[^0-9+]/g, '');
+  input.value = value;
+
+  // Try matching country code
+  const match = COUNTRIES.find(c =>
+    value.startsWith(c.code) ||
+    value.startsWith(c.code.replace('+',''))
+  );
+
+  if (match) {
+    // Update flag + prefix
+    wrap.querySelector('.phone-flag').textContent = match.flag;
+    wrap.querySelector('.phone-prefix').textContent = match.code;
+    wrap.dataset.code = match.code;
+
+    // Remove country code from input
+    input.value = value
+      .replace(match.code, '')
+      .replace(match.code.replace('+',''), '');
+  }
+}
+</script>
+
+</body>
+</html>
