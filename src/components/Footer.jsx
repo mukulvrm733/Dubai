@@ -5,8 +5,8 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logos">
-              <img src="/img-1.webp" alt="Infinite Imperial Ventures" className="iiv-emblem" />
-              <img src="/img-2.webp" alt="Infinite Imperial Ventures" className="iiv-text" />
+              <img src="/img-1.webp" alt="Infinite Imperial Ventures" className="iiv-emblem" loading="lazy" decoding="async" />
+              <img src="/img-2.webp" alt="Infinite Imperial Ventures" className="iiv-text" loading="lazy" decoding="async" />
             </div>
             <p>Infinite Imperial Ventures Real Estate LLC — a Dubai-based real estate company helping clients invest in premium properties across the emirate.</p>
             <div className="footer-contact">

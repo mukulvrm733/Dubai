@@ -86,7 +86,7 @@ export default function FloorPlans({ openLeadPopup }) {
         {PLANS.map(p => (
           <div key={p.id} className={`fp-panel${active === p.id ? ' active' : ''}`}>
             <div className="fp-image">
-              <img src={p.img} alt={p.imgAlt} />
+              <img src={p.img} alt={p.imgAlt} loading="lazy" decoding="async" width="6600" height="3712" />
             </div>
             <div className="fp-details">
               <h3>{p.title}</h3>

@@ -13,7 +13,7 @@ export default function Location() {
       <div className="container">
         <div className="location-grid">
           <div className="location-map">
-            <img src="/location-map.webp" alt="Location Map — Greenz by Danube, Dubai Academic City" />
+            <img src="/location-map.webp" alt="Location Map — Greenz by Danube, Dubai Academic City" loading="lazy" decoding="async" width="3157" height="3189" />
           </div>
           <div className="location-points">
             <h2 className="section-title ss-line-bottom">Prime Location with Strong Future Growth</h2>

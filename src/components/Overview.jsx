@@ -26,7 +26,7 @@ export default function Overview({ openLeadPopup }) {
           <div className="overview-gallery-grid">
             {GALLERY.map((item, i) => (
               <div className="gallery-item" key={i} onClick={() => setLightboxSrc(item.src)}>
-                <img src={item.src} alt={item.alt} />
+                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" width="1600" height="900" />
               </div>
             ))}
           </div>
