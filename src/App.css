@@ -205,7 +205,7 @@ section { padding: 96px 0; }
 }
 .highlight-box:last-child { border-right: none; }
 .highlight-box .val {
-  font-family: var(--font-serif); font-size: 34px; font-weight: 700; color: var(--white);
+  font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--white);
   line-height: 1; margin-bottom: 8px;
 }
 .highlight-box .lbl { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
@@ -309,7 +309,7 @@ section { padding: 96px 0; }
 }
 .payment-block:last-child { border-right: none; }
 .payment-block .pct {
-  font-family: var(--font-serif); font-size: 64px; font-weight: 700;
+  font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700;
   color: var(--green); line-height: 1;
 }
 .payment-block .pct sup { font-size: 28px; vertical-align: super; }
@@ -913,7 +913,9 @@ footer {
   /* ── Hero ── */
   #hero {
     padding-top: 58px; min-height: 100svh;
-    background-position: 65% center;
+    background-image: url('/Mhero-1.webp');
+    background-size: 365%;
+    background-position: center center;
   }
   .hero-overlay {
     background: linear-gradient(
