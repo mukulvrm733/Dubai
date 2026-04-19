@@ -59,6 +59,10 @@ export default function CTA() {
           </div>
 
           <div className="cta-form-wrap">
+            <div className="cta-form-header-badge">
+              <span className="form-badge-dot form-badge-dot--green"></span>
+              Free Consultation · No Obligation
+            </div>
             <p className="cta-form-title">Get Full Project Details</p>
             <p className="cta-form-sub">Pricing · Floor Plans · Unit Availability — We respond within minutes</p>
             <form onSubmit={handleSubmit}>
@@ -103,14 +107,18 @@ export default function CTA() {
                   <option>Open to all options</option>
                 </select>
               </div>
-              <button type="submit" className="btn-primary" style={{ marginTop: '20px' }}>
+              <button type="submit" className="btn-primary btn-primary--glow" style={{ marginTop: '20px' }}>
                 <WhatsAppIcon />
                 Send My Enquiry on WhatsApp
               </button>
-              <p style={{ fontSize: '11px', color: 'var(--text-light)', textAlign: 'center', marginTop: '10px' }}>
-                Your information is secure &amp; confidential
-              </p>
-              <div className="urgency" style={{ marginTop: '10px' }}>
+              <div className="cta-form-trust-row">
+                <span>🔒 Secure</span>
+                <span>·</span>
+                <span>No Spam</span>
+                <span>·</span>
+                <span>⚡ 15-min Reply</span>
+              </div>
+              <div className="urgency" style={{ marginTop: '12px' }}>
                 <span className="pulse-dot" style={{ background: 'var(--green)' }}></span>
                 Limited units · Phase 1 · Act before allocation closes
               </div>
