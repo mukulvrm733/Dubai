@@ -92,11 +92,7 @@ export default function FloorPlans({ openLeadPopup }) {
               <h3>{p.title}</h3>
               <p className="fp-sqft">{p.sqft}</p>
               <p>{p.desc}</p>
-              <ul className="fp-features">
-                {p.features.map((f, i) => (
-                  <li key={i}><span>✔</span> {f}</li>
-                ))}
-              </ul>
+              <p className="fp-features-para">{p.features.join(' · ')}</p>
               <button className="btn-outline" onClick={() => openLeadPopup('Download All Floor Plans')}>
                 Download All Floor Plans
               </button>

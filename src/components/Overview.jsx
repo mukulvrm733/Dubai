@@ -1,18 +1,4 @@
-import { useState } from 'react'
-
-const GALLERY = [
-  { src: '/gall-1.webp', alt: 'Community View 1' },
-  { src: '/gall-2.webp', alt: 'Community View 2' },
-  { src: '/gall-3.webp', alt: 'Community View 3' },
-  { src: '/gall-4.webp', alt: 'Community View 4' },
-  { src: '/gall-5.webp', alt: 'Community View 5' },
-  { src: '/gall-6.webp', alt: 'Community View 6' },
-  { src: '/villa-exterior.webp', alt: 'Greenz Exterior' },
-]
-
-export default function Overview({ openLeadPopup }) {
-  const [lightboxSrc, setLightboxSrc] = useState(null)
-
+export default function Overview() {
   return (
     <section id="overview">
       <div className="container">
@@ -23,22 +9,11 @@ export default function Overview({ openLeadPopup }) {
             <p>Its location places residents next to Dubai Silicon Oasis — a major technology district with more than 100,000 residents and entrepreneurs and over 40,000 companies — as well as close to Dubai International Academic City and several international schools. With direct access to Sheikh Mohammed Bin Zayed Road (E311) and Emirates Road (E611), the community combines suburban space with strong connectivity across Dubai.</p>
           </div>
 
-          <div className="overview-gallery-grid">
-            {GALLERY.map((item, i) => (
-              <div className="gallery-item" key={i} onClick={() => setLightboxSrc(item.src)}>
-                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" width="1600" height="900" />
-              </div>
-            ))}
+          <div className="overview-single-img">
+            <img src="/villa-exterior.webp" alt="Greenz Villa Exterior" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
-
-      {lightboxSrc && (
-        <div className="lightbox-overlay active" onClick={() => setLightboxSrc(null)}>
-          <button className="lightbox-close" onClick={() => setLightboxSrc(null)}>&times;</button>
-          <img src={lightboxSrc} alt="" onClick={e => e.stopPropagation()} />
-        </div>
-      )}
     </section>
   )
 }

@@ -91,21 +91,11 @@ export default function CTA() {
                   <label>Budget Range</label>
                   <select value={budget} onChange={e => setBudget(e.target.value)}>
                     <option value="" disabled>Select</option>
-                    <option>₹3 Cr – ₹5 Cr</option>
-                    <option>₹5 Cr – ₹8 Cr</option>
-                    <option>₹8 Cr+</option>
+                    <option>3M – 5M</option>
+                    <option>5M – 7M</option>
+                    <option>7M+</option>
                   </select>
                 </div>
-              </div>
-              <div className="form-group" style={{ marginTop: '14px' }}>
-                <label>Unit Preference</label>
-                <select value={unit} onChange={e => setUnit(e.target.value)}>
-                  <option value="" disabled>Select unit type</option>
-                  <option>3 BR Townhouse</option>
-                  <option>4 BR Townhouse</option>
-                  <option>5 BR Villa</option>
-                  <option>Open to all options</option>
-                </select>
               </div>
               <button type="submit" className="btn-primary btn-primary--glow" style={{ marginTop: '20px' }}>
                 <WhatsAppIcon />

@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Highlights from './components/Highlights'
 import Overview from './components/Overview'
+import Gallery from './components/Gallery'
 import Payment from './components/Payment'
 import Location from './components/Location'
 import Amenities from './components/Amenities'
@@ -34,7 +35,8 @@ export default function App() {
       <Nav openLeadPopup={openLeadPopup} />
       <Hero openLeadPopup={openLeadPopup} />
       <Highlights />
-      <Overview openLeadPopup={openLeadPopup} />
+      <Overview />
+      <Gallery />
       <Payment openLeadPopup={openLeadPopup} />
       <Location />
       <Amenities />

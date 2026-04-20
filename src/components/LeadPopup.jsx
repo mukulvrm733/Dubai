@@ -59,9 +59,9 @@ export default function LeadPopup({ isOpen, title, onClose }) {
             <label htmlFor="p-budget">Budget Range</label>
             <select id="p-budget" value={budget} onChange={e => setBudget(e.target.value)}>
               <option value="" disabled>Select budget</option>
-              <option>₹3 Cr – ₹5 Cr</option>
-              <option>₹5 Cr – ₹8 Cr</option>
-              <option>₹8 Cr+</option>
+              <option>3M – 5M </option>
+              <option>5M – 7M</option>
+              <option>7M+</option>
             </select>
           </div>
           <button type="submit" className="btn-primary">
