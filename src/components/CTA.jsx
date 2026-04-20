@@ -59,10 +59,6 @@ export default function CTA() {
           </div>
 
           <div className="cta-form-wrap">
-            <div className="cta-form-header-badge">
-              <span className="form-badge-dot form-badge-dot--green"></span>
-              Free Consultation · No Obligation
-            </div>
             <p className="cta-form-title">Get Full Project Details</p>
             <p className="cta-form-sub">Pricing · Floor Plans · Unit Availability — We respond within minutes</p>
             <form onSubmit={handleSubmit}>
@@ -107,10 +103,6 @@ export default function CTA() {
                 <span>No Spam</span>
                 <span>·</span>
                 <span>⚡ 15-min Reply</span>
-              </div>
-              <div className="urgency" style={{ marginTop: '12px' }}>
-                <span className="pulse-dot" style={{ background: 'var(--green)' }}></span>
-                Limited units · Phase 1 · Act before allocation closes
               </div>
             </form>
           </div>

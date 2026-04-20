@@ -15,9 +15,24 @@ export default function LeadPopup({ isOpen, title, onClose }) {
     return () => document.removeEventListener('keydown', handler)
   }, [onClose])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!name || !phone.number) { alert('Please enter your name and WhatsApp number.'); return }
+
+    // Send lead data as CSV email in background (fire-and-forget)
+    fetch('/api/send-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        phone: `${phone.code}${phone.number}`,
+        purpose: purpose || '',
+        budget: budget || '',
+        buttonTitle: title || 'Get Details on WhatsApp',
+        submittedAt: new Date().toISOString(),
+      }),
+    }).catch(() => {/* silently ignore if server unavailable */})
+
     const msg = encodeURIComponent(
       `Hi, I'm interested in Greenz by Danube.\n\nRequest: ${title}\nName: ${name}\nWhatsApp: ${phone.code}${phone.number}\nPurpose: ${purpose || 'Not specified'}\nBudget: ${budget || 'Not specified'}\n\nPlease share full details.`
     )

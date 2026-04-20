@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: 'What is the payment plan structure?',
-    a: 'The payment plan is 70/30: 10% on booking, 60% during construction (via 1% monthly installments over 4 years), and 30% on handover in Q4 2029. This is designed to make premium Dubai real estate accessible without heavy upfront capital.',
+    a: 'The payment plan is 70/30: 10% on booking, 60% during construction (via 1% monthly installments over 3 years), and 30% on handover in Q4 2029. This is designed to make premium Dubai real estate accessible without heavy upfront capital.',
   },
   {
     q: 'When is the handover date?',

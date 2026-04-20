@@ -1,7 +1,7 @@
 const HIGHLIGHTS = [
-  { val: 'AED 3.5M', lbl: 'Starting Price', desc: 'Fully furnished units' },
-  { val: '1%', lbl: 'Monthly Plan', desc: '70/30 payment split' },
-  { val: '3–5 BR', lbl: 'Unit Types', desc: 'Townhouses & Villas' },
+  { val: 'AED 3.5M', lbl: 'Starting Price', },
+  { val: '1%', lbl: 'Monthly Plan',},
+  { val: '3–5 BR', lbl: 'Unit Types', },
   { val: 'Q4 2029', lbl: 'Handover', },
 ]
 
@@ -15,7 +15,6 @@ export default function Highlights() {
             <div className="highlight-box" key={i}>
               <div className="val">{h.val}</div>
               <div className="lbl">{h.lbl}</div>
-              <div className="desc">{h.desc}</div>
             </div>
           ))}
         </div>

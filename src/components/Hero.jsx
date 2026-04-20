@@ -27,7 +27,11 @@ export default function Hero({ openLeadPopup }) {
       <div className="hero-overlay"></div>
       <div className="hero-inner">
         <div className="hero-text">
-          <h1 className="hero-title">Fully Furnished Townhouses &amp; Villas in Dubai AED 3.5M</h1>
+          <h1 className="hero-title">
+            Fully Furnished<br className="desktop-br" />{' '}
+            Townhouses &amp; Villas<br className="desktop-br" />{' '}
+            in Dubai AED 3.5M
+          </h1>
           <button
             className="btn-outline btn-outline-hero"
             style={{ marginTop: '24px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}

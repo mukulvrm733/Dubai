@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react'
 
 const IMAGES = [
-  '/Gallery/1.webp',
   '/Gallery/2.webp',
   '/Gallery/3.webp',
   '/Gallery/4.webp',
@@ -30,6 +29,8 @@ export default function Gallery() {
     touchStartX.current = null
   }
 
+  const nextIdx = (current + 1) % IMAGES.length
+
   return (
     <section id="gallery">
       <div className="container">
@@ -39,8 +40,39 @@ export default function Gallery() {
         </div>
       </div>
 
+      {/* Desktop split view */}
+      <div className="gdesktop-view">
+        <div className="gdesktop-main" onClick={next}>
+          <img src={IMAGES[current]} alt={`Greenz Gallery ${current + 1}`} loading="lazy" decoding="async" />
+          <div className="gslider-counter gdesktop-counter">{current + 1} / {IMAGES.length}</div>
+        </div>
+        <div className="gdesktop-side" onClick={next}>
+          <img src={IMAGES[nextIdx]} alt={`Greenz Gallery ${nextIdx + 1}`} loading="lazy" decoding="async" />
+        </div>
+        <button className="gslider-btn gdesktop-prev" onClick={prev} aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13 4L7 10L13 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button className="gslider-btn gdesktop-next" onClick={next} aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div className="gdesktop-dots gdesktop-dots-bar">
+        {IMAGES.map((_, i) => (
+          <span
+            key={i}
+            className={i === current ? 'active' : ''}
+            onClick={() => setCurrent(i)}
+          />
+        ))}
+      </div>
+
+      {/* Mobile slider */}
       <div
-        className="gslider-wrap"
+        className="gslider-wrap gslider-mobile-only"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -77,7 +109,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      <div className="gslider-thumbs">
+      <div className="gslider-thumbs gslider-mobile-only">
         {IMAGES.map((src, i) => (
           <div
             key={i}
