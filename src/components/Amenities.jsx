@@ -4,7 +4,7 @@ export default function Amenities() {
       <div className="container">
         <div className="amenities-header">
           <h2 className="section-title ss-line-bottom">Designed for Comfortable Family Living</h2>
-           <p>A 400,000 sq. ft. amenities destination thoughtfully divided into five zones designed to create a vibrant, family-friendly community with 50+ experiences for leisure, wellness, and meaningful time together</p>
+           <p className="section-sub">A 400,000 sq. ft. amenities destination thoughtfully divided into five zones designed to create a vibrant, family-friendly community with 50+ experiences for leisure, wellness, and meaningful time together</p>
         </div>
 
         <div className="amenities-grid">
